@@ -159,10 +159,6 @@
     display: none;
   }
 
-  .navbar__right {
-    display: none;
-  }
-
   /* Mobile contact trigger inside nav */
   .navbar__contact-mobile {
     display: block !important;
