@@ -295,9 +295,20 @@
   }
 
   /* --- Services (What We Do) --- */
+  .services {
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
   .services__header {
-    left: 40px;
-    width: calc(100% - 80px);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 40px 36px;
   }
 
   .services__desc {
@@ -305,22 +316,29 @@
   }
 
   .services__bg {
+    position: absolute;
+    top: auto;
+    bottom: 24px;
     left: 24px;
     right: 24px;
-    bottom: 24px;
-    top: 320px;
+    height: calc(100% - 220px);
   }
 
   .services__cards {
-    left: 40px;
-    right: 40px;
-    top: 380px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 40px 60px;
+    gap: 20px;
   }
 
   .services__card-inner {
     width: 300px;
     height: auto;
+    min-height: 400px;
   }
 
   /* --- Alliances --- */
@@ -1123,12 +1141,33 @@
     font-size: 14px;
   }
 
+  .services__header {
+    padding: 40px 16px 24px;
+  }
+
   .services__desc {
     font-size: 16px;
   }
 
+  .services__cards {
+    padding: 24px 16px 40px;
+    gap: 12px;
+  }
+
+  .services__card-inner {
+    min-height: 320px;
+    padding: 24px 20px;
+  }
+
   .services__card-title {
     font-size: 20px;
+  }
+
+  .services__bg {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: calc(100% - 160px);
   }
 
   .creates__description {
