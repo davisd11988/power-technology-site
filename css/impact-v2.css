@@ -307,6 +307,26 @@
 
 
 /* ==========================================================================
+   CONTACT PANEL OVERRIDES — Match Figma screenshot
+   ========================================================================== */
+
+.contact-panel__title {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-panel__submit {
+  width: 100%;
+  padding: 20px 36px;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+
+
+/* ==========================================================================
    RESPONSIVE — TABLET (max 1200px)
    ========================================================================== */
 
