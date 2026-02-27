@@ -3,6 +3,28 @@
    Full-width case study slider with detailed company views
    ========================================================================== */
 
+/* --- Blue line under navbar (impact pages) --- */
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #31baf0;
+  pointer-events: none;
+}
+
+/* --- CTA overrides for impact pages --- */
+.navbar__cta {
+  text-transform: none;
+  font-weight: 300;
+}
+
+.navbar__cta .arrow-icon {
+  display: none;
+}
+
 /* ==========================================================================
    CASE STUDY SECTION
    ========================================================================== */
