@@ -631,40 +631,36 @@
   transition: width 0.8s cubic-bezier(0, 0, 0.01, 0.982);
 }
 
-/* Minimal Arrow Buttons — grouped right */
-.impact__carousel-arrows {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
 .impact__carousel-arrow {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: none;
+  background-color: #e8f0fe;
+  border: 1.5px solid #b8d4f0;
+  border-radius: 50%;
   cursor: pointer;
-  transition: opacity 0.25s ease;
-  color: #1a1a1a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  color: #337cf7;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .impact__carousel-arrow:hover {
-  opacity: 0.5;
+  transform: scale(1.06);
+  background-color: #dbe7fc;
+  box-shadow: 0 4px 12px rgba(51, 124, 247, 0.2);
 }
 
 .impact__carousel-arrow.is-disabled {
-  opacity: 0.2;
+  opacity: 0.25;
   pointer-events: none;
 }
 
 .impact__carousel-arrow svg {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   stroke: currentColor;
   stroke-width: 1.5;
   fill: none;
