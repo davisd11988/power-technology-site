@@ -95,12 +95,13 @@
         </div>
         <div class="hero__content">
           <div class="hero__text">
-            <p class="hero__subtitle hero__subtitle--blue">YOUR OPERATING SYSTEM FOR EXECUTION</p>
-            <h1 class="hero__title">Modern systems for serious operations. Driving performance under pressure.</h1>
-            <p class="hero__desc">Power Technology works at the intersection of technology, operations, and investment&mdash; helping private equity firms and the companies they own leverage technology to strengthen financial and operational performance.</p>
+            <p class="hero__subtitle">EXECUTION, ENABLED.</p>
+            <h1 class="hero__title">Driving performance under pressure.</h1>
           </div>
-          <a href="#apart" class="btn-pill btn-pill--solid-white">
+          <a href="#apart" class="btn-pill btn-pill--outline-white hover-btn-cta">
+
             <span>EXPLORE OUR CAPABILITIES</span>
+            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
@@ -111,12 +112,13 @@
         </div>
         <div class="hero__content">
           <div class="hero__text">
-            <p class="hero__subtitle hero__subtitle--blue">TECHNOLOGY. STRATEGY.</p>
+            <p class="hero__subtitle">TECHNOLOGY. STRATEGY.</p>
             <h1 class="hero__title">Building systems that scale with your business.</h1>
-            <p class="hero__desc">We design and implement secure, scalable technology platforms that support growth, integration, and long-term value creation.</p>
           </div>
-          <a href="#os-tabs" class="btn-pill btn-pill--solid-white">
+          <a href="#os-tabs" class="btn-pill btn-pill--outline-white hover-btn-cta">
+
             <span>VIEW OUR APPROACH</span>
+            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
@@ -127,24 +129,26 @@
         </div>
         <div class="hero__content">
           <div class="hero__text">
-            <p class="hero__subtitle hero__subtitle--blue">OPERATIONAL EXCELLENCE.</p>
+            <p class="hero__subtitle">OPERATIONAL EXCELLENCE.</p>
             <h1 class="hero__title">From assessment to execution in weeks, not months.</h1>
-            <p class="hero__desc">Optimize processes, governance, and performance to deliver predictable outcomes and sustained operational improvement.</p>
           </div>
-          <a href="#services" class="btn-pill btn-pill--solid-white">
+          <a href="#services" class="btn-pill btn-pill--outline-white hover-btn-cta">
+
             <span>SEE WHAT WE DO</span>
+            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
     </div>
-    <!-- Slider Navigation (bottom-left dashes) -->
-    <div class="hero__bottom-nav" id="heroNav">
-      <div class="hero__dash-indicators" id="heroDashes">
-        <button class="hero__dash is-active" data-slide="0" aria-label="Go to slide 1"></button>
-        <button class="hero__dash" data-slide="1" aria-label="Go to slide 2"></button>
-        <button class="hero__dash" data-slide="2" aria-label="Go to slide 3"></button>
+    <!-- Slider Navigation (right side) -->
+    <div class="scroll-indicator" id="heroNav">
+      <button class="scroll-indicator__arrow scroll-indicator__arrow--prev" id="heroPrev" aria-label="Previous slide">
+        <svg viewBox="0 0 13 12" fill="none"><path d="M11 6H1M5.5 2L1.5 6l4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="scroll-indicator__track">
+        <div class="scroll-indicator__progress" id="heroProgress"></div>
       </div>
-      <button class="hero__nav-arrow" id="heroNext" aria-label="Next slide">
+      <button class="scroll-indicator__arrow scroll-indicator__arrow--next" id="heroNext" aria-label="Next slide">
         <svg viewBox="0 0 13 12" fill="none"><path d="M1 6h10M7.5 2l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
@@ -570,32 +574,42 @@
     </button>
     <div class="contact-panel__inner">
       <div class="contact-panel__header">
-        <h2 class="contact-panel__title">CONTACT US</h2>
-        <p class="contact-panel__subtitle">Get in touch to discover how we can help you unlock new growth opportunities.</p>
+        <h2 class="contact-panel__title">Get In Touch</h2>
+        <p class="contact-panel__subtitle">Reach out to learn how Power Technology can help drive measurable value across your portfolio.</p>
       </div>
       <form class="contact-panel__form" id="contactForm">
         <div class="contact-panel__row">
           <div class="contact-panel__field">
-            <label class="contact-panel__label">First Name</label>
-            <input type="text" class="contact-panel__input" placeholder="Enter First Name" required>
+            <label class="contact-panel__label">First Name <span class="required">*</span></label>
+            <input type="text" class="contact-panel__input" placeholder="Enter first name" required>
           </div>
           <div class="contact-panel__field">
-            <label class="contact-panel__label">Last Name</label>
-            <input type="text" class="contact-panel__input" placeholder="Enter Last Name" required>
+            <label class="contact-panel__label">Last Name <span class="required">*</span></label>
+            <input type="text" class="contact-panel__input" placeholder="Enter last name" required>
           </div>
         </div>
         <div class="contact-panel__row">
           <div class="contact-panel__field">
-            <label class="contact-panel__label">Email Adress</label>
-            <input type="email" class="contact-panel__input" placeholder="EnterEmail" required>
+            <label class="contact-panel__label">Email Address <span class="required">*</span></label>
+            <input type="email" class="contact-panel__input" placeholder="Enter email" required>
           </div>
           <div class="contact-panel__field">
             <label class="contact-panel__label">Phone</label>
-            <input type="tel" class="contact-panel__input" placeholder="Enter Phone  Number">
+            <input type="tel" class="contact-panel__input" placeholder="Enter phone number">
+          </div>
+        </div>
+        <div class="contact-panel__row">
+          <div class="contact-panel__field">
+            <label class="contact-panel__label">Job Title</label>
+            <input type="text" class="contact-panel__input" placeholder="Enter title">
+          </div>
+          <div class="contact-panel__field">
+            <label class="contact-panel__label">Company <span class="required">*</span></label>
+            <input type="text" class="contact-panel__input" placeholder="Enter company name" required>
           </div>
         </div>
         <div class="contact-panel__field">
-          <label class="contact-panel__label">How Can We Help?</label>
+          <label class="contact-panel__label">How can we help? <span class="required">*</span></label>
           <select class="contact-panel__select" required>
             <option value="" disabled selected>Select Topic</option>
             <option value="pe-solutions">Private Equity Solutions</option>
@@ -608,26 +622,23 @@
           </select>
         </div>
         <div class="contact-panel__field">
-          <label class="contact-panel__label">Country</label>
-          <select class="contact-panel__select">
-            <option value="" disabled selected>Select Country</option>
-            <option value="us">United States</option>
-            <option value="ca">Canada</option>
-            <option value="uk">United Kingdom</option>
-            <option value="au">Australia</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="contact-panel__field">
           <label class="contact-panel__label">Additional comments (optional)</label>
-          <textarea class="contact-panel__textarea" placeholder="How can we help with your digital priorites?" rows="3"></textarea>
+          <textarea class="contact-panel__textarea" placeholder="How can we help with your technology priorities?" rows="3"></textarea>
+        </div>
+        <div class="contact-panel__radio-group">
+          <p class="contact-panel__radio-label">I agree to receive email reports, articles, and event invitations. I understand I may unsubscribe at any time by clicking the link included in emails.</p>
+          <div class="contact-panel__radios">
+            <label class="contact-panel__radio"><input type="radio" name="email-consent" value="yes"> Yes</label>
+            <label class="contact-panel__radio"><input type="radio" name="email-consent" value="no"> No</label>
+          </div>
         </div>
         <label class="contact-panel__checkbox">
           <input type="checkbox" required>
-          <span class="contact-panel__checkbox-text">I have read and accept the <a href="#">terms of use</a>. The submission of personal information through this page is subject to Deloitte's <a href="#">Privacy Statement</a> and <a href="#">Legal Terms</a></span>
+          <span class="contact-panel__checkbox-text">I have read and accept the <a href="#">terms of use</a>. The submission of personal information through this page is subject to Power Technology's <a href="#">Privacy Policy</a>.</span>
         </label>
         <button type="submit" class="contact-panel__submit">
           <span>SUBMIT</span>
+          <svg viewBox="0 0 16 12" fill="none"><path d="M1 6h12M9.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </form>
     </div>
