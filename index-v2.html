@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/home-alt.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
@@ -87,13 +86,12 @@
         </div>
         <div class="hero__content">
           <div class="hero__text">
-            <p class="hero__subtitle">EXECUTION, ENABLED.</p>
-            <h1 class="hero__title">Driving performance under pressure.</h1>
+            <p class="hero__subtitle hero__subtitle--blue">YOUR OPERATING SYSTEM FOR EXECUTION</p>
+            <h1 class="hero__title">Modern systems for serious operations. Driving performance under pressure.</h1>
+            <p class="hero__desc">Power Technology works at the intersection of technology, operations, and investment&mdash; helping private equity firms and the companies they own leverage technology to strengthen financial and operational performance.</p>
           </div>
-          <a href="#apart" class="btn-pill btn-pill--outline-white hover-btn-cta">
-
+          <a href="#apart" class="btn-pill btn-pill--solid-white">
             <span>EXPLORE OUR CAPABILITIES</span>
-            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
@@ -104,13 +102,12 @@
         </div>
         <div class="hero__content">
           <div class="hero__text">
-            <p class="hero__subtitle">TECHNOLOGY. STRATEGY.</p>
+            <p class="hero__subtitle hero__subtitle--blue">TECHNOLOGY. STRATEGY.</p>
             <h1 class="hero__title">Building systems that scale with your business.</h1>
+            <p class="hero__desc">We design and implement secure, scalable technology platforms that support growth, integration, and long-term value creation.</p>
           </div>
-          <a href="#os-tabs" class="btn-pill btn-pill--outline-white hover-btn-cta">
-
+          <a href="#os-tabs" class="btn-pill btn-pill--solid-white">
             <span>VIEW OUR APPROACH</span>
-            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
@@ -121,26 +118,24 @@
         </div>
         <div class="hero__content">
           <div class="hero__text">
-            <p class="hero__subtitle">OPERATIONAL EXCELLENCE.</p>
+            <p class="hero__subtitle hero__subtitle--blue">OPERATIONAL EXCELLENCE.</p>
             <h1 class="hero__title">From assessment to execution in weeks, not months.</h1>
+            <p class="hero__desc">Optimize processes, governance, and performance to deliver predictable outcomes and sustained operational improvement.</p>
           </div>
-          <a href="#wwd-alt" class="btn-pill btn-pill--outline-white hover-btn-cta">
-
+          <a href="#services" class="btn-pill btn-pill--solid-white">
             <span>SEE WHAT WE DO</span>
-            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
     </div>
-    <!-- Slider Navigation (right side) -->
-    <div class="scroll-indicator" id="heroNav">
-      <button class="scroll-indicator__arrow scroll-indicator__arrow--prev" id="heroPrev" aria-label="Previous slide">
-        <svg viewBox="0 0 13 12" fill="none"><path d="M11 6H1M5.5 2L1.5 6l4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="scroll-indicator__track">
-        <div class="scroll-indicator__progress" id="heroProgress"></div>
+    <!-- Slider Navigation (bottom-left dashes) -->
+    <div class="hero__bottom-nav" id="heroNav">
+      <div class="hero__dash-indicators" id="heroDashes">
+        <button class="hero__dash is-active" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="hero__dash" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="hero__dash" data-slide="2" aria-label="Go to slide 3"></button>
       </div>
-      <button class="scroll-indicator__arrow scroll-indicator__arrow--next" id="heroNext" aria-label="Next slide">
+      <button class="hero__nav-arrow" id="heroNext" aria-label="Next slide">
         <svg viewBox="0 0 13 12" fill="none"><path d="M1 6h10M7.5 2l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
@@ -196,6 +191,28 @@
         <div class="apart__card-desc">
           <p>Built to scale, adapt, and evolve.</p>
           <a href="#" class="learn-more">
+            <span>LEARN MORE</span>
+            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IN THE SPOTLIGHT ===== -->
+  <section class="spotlight scroll-animate" id="spotlight">
+    <div class="spotlight__inner">
+      <div class="spotlight__header">
+        <h2 class="section-label">IN THE SPOTLIGHT</h2>
+        <p class="spotlight__subtitle">The Operating System Behind Scalable Execution</p>
+      </div>
+      <div class="spotlight__content">
+        <div class="spotlight__visual">
+          <img src="images/blob.gif" alt="3D blob visualization" class="spotlight__sphere-img">
+        </div>
+        <div class="spotlight__text">
+          <p class="spotlight__description">Power Technology partners with private equity firms and industrial operators to turn technology into a disciplined driver of value. We focus on execution&mdash;reducing risk, improving performance, and building systems that scale with the business.</p>
+          <a href="#" class="btn-pill btn-pill--outline-blue">
             <span>LEARN MORE</span>
             <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -397,41 +414,45 @@
     </div>
   </section>
 
-  <!-- ===== WHAT WE DO (ALT — White bg with image cards) ===== -->
-  <section class="wwd-alt scroll-animate" id="wwd-alt">
-    <div class="wwd-alt__header">
-      <h2 class="wwd-alt__label">WHAT WE DO</h2>
-      <p class="wwd-alt__desc">We partner with private equity firms and the industrial companies they own to reduce technology risk, drive disciplined value creation, and modernize the systems that support growth, margin, and exit readiness</p>
+  <!-- ===== WHAT WE DO ===== -->
+  <section class="services scroll-animate" id="services">
+    <div class="services__header">
+      <h2 class="section-label section-label--light">WHAT WE DO</h2>
+      <p class="services__desc">We partner with private equity firms and the industrial companies they own to reduce technology risk, drive disciplined value creation, and modernize the systems that support growth, margin, and exit readiness</p>
     </div>
-    <div class="wwd-alt__cards">
+    <div class="services__bg"></div>
+    <div class="services__cards">
       <!-- Card 1 -->
-      <div class="wwd-alt__card">
-        <div class="wwd-alt__card-image-wrap">
-          <img class="wwd-alt__card-image" src="images/image-import-50.jpg" alt="Private Equity Solutions">
-        </div>
-        <div class="wwd-alt__card-body">
-          <h3 class="wwd-alt__card-title">Private Equity Solutions</h3>
-          <a href="#" class="wwd-alt__card-link">LEARN MORE</a>
+      <div class="services__card hover-card-services">
+        <div class="services__card-inner">
+          <h3 class="services__card-title">Private Equity Solutions</h3>
+          <p class="services__card-desc">Technology strategy and execution designed to reduce risk, accelerate value creation, and support exit readiness.</p>
+          <a href="#" class="learn-more">
+            <span>LEARN MORE</span>
+            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
       <!-- Card 2 -->
-      <div class="wwd-alt__card">
-        <div class="wwd-alt__card-image-wrap">
-          <img class="wwd-alt__card-image" src="images/image-import-52.jpg" alt="Portfolio Company Solutions">
-        </div>
-        <div class="wwd-alt__card-body">
-          <h3 class="wwd-alt__card-title">Portfolio Company Solutions</h3>
-          <a href="#" class="wwd-alt__card-link">LEARN MORE</a>
+      <div class="services__card hover-card-services">
+        <div class="services__card-inner">
+          <h3 class="services__card-title">Portfolio Company Solutions</h3>
+          <p class="services__card-desc">Hands-on support to modernize systems, improve performance, and scale operations across portfolio companies.</p>
+          <a href="#" class="learn-more">
+            <span>LEARN MORE</span>
+            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
       <!-- Card 3 -->
-      <div class="wwd-alt__card">
-        <div class="wwd-alt__card-image-wrap">
-          <img class="wwd-alt__card-image" src="images/image-import-34.jpg" alt="PowerOne Digital Platform">
-        </div>
-        <div class="wwd-alt__card-body">
-          <h3 class="wwd-alt__card-title">PowerOne Digital Platform</h3>
-          <a href="#" class="wwd-alt__card-link">LEARN MORE</a>
+      <div class="services__card hover-card-services">
+        <div class="services__card-inner">
+          <h3 class="services__card-title">PowerOne Digital Platform</h3>
+          <p class="services__card-desc">A unified digital platform that enables visibility, governance, and execution across the enterprise.</p>
+          <a href="#" class="learn-more">
+            <span>LEARN MORE</span>
+            <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -474,16 +495,20 @@
     </div>
   </section>
 
-  <!-- ===== WE ARE (White CTA section) ===== -->
-  <section class="weare scroll-animate" id="weare">
-    <div class="weare__inner">
-      <div class="weare__text">
-        <h2 class="weare__label">WE ARE</h2>
-        <p class="weare__heading">Operator-led teams building systems that hold up under real operations.</p>
+  <!-- ===== DARK CTA ===== -->
+  <section class="dark-cta">
+    <div class="dark-cta__inner" style="background-image: url('images/image-import-2.jpg'); background-size: cover; background-position: center;">
+      <div class="dark-cta__gradient"></div>
+      <div class="dark-cta__content">
+        <div class="dark-cta__text">
+          <p class="dark-cta__label">OUR IMPACT</p>
+          <h2 class="dark-cta__heading">Operator- led teams building systems that hold up under real operations.</h2>
+        </div>
+        <a href="#" class="btn-pill btn-pill--outline-white hover-btn-cta">
+          <span>MEET THE TEAM</span>
+          <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
-      <a href="#" class="weare__cta">
-        <span>MEET THE TEAM</span>
-      </a>
     </div>
   </section>
 
@@ -601,6 +626,6 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
-  <script src="js/home-alt.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>
