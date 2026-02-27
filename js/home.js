@@ -139,11 +139,14 @@ function initTabs() {
       tab.setAttribute('aria-selected', String(i === index));
     });
 
-    // Animate spring indicator
+    // Animate spring indicator using actual tab position
     if (indicator) {
-      const tabWidth = 100 / tabs.length;
-      indicator.style.left = `${index * tabWidth}%`;
-      indicator.style.width = `${tabWidth}%`;
+      const tab = tabs[index];
+      const tabList = tab.parentElement;
+      indicator.style.left = `${tab.offsetLeft}px`;
+      indicator.style.width = `${tab.offsetWidth}px`;
+      // Auto-scroll tab into view on mobile
+      tabList.scrollTo({ left: tab.offsetLeft - 16, behavior: 'smooth' });
     }
 
     // Switch panels
@@ -171,6 +174,9 @@ function initTabs() {
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => activateTab(index));
   });
+
+  // Recalculate indicator on resize / orientation change
+  window.addEventListener('resize', () => activateTab(activeIndex));
 
   // Initialize first tab
   activateTab(0);
