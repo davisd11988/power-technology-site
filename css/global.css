@@ -383,6 +383,22 @@ body {
   border-color: rgba(255, 255, 255, 0.7);
 }
 
+.btn-pill--solid-white {
+  border: 2px solid transparent;
+  background: var(--color-white);
+  color: var(--color-black);
+  border-radius: 6px;
+  padding: 18px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2.8px;
+  line-height: 24px;
+}
+
+.btn-pill--solid-white:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .btn-pill--outline-blue {
   border: 1px solid rgba(51, 124, 247, 0.4);
   background: transparent;

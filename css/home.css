@@ -43,15 +43,15 @@
 
 .hero__content {
   position: absolute;
-  left: 80px;
+  left: 118px;
   right: 200px;
   top: 0;
   bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
-  max-width: 1100px;
+  gap: 67px;
+  max-width: 919px;
   z-index: 2;
   padding-top: 60px;
 }
@@ -119,25 +119,110 @@
 .hero__text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 28px;
 }
 
 .hero__subtitle {
-  font-family: var(--font-label);
-  font-size: var(--text-lg);
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 200;
   color: #d4d4d4;
-  line-height: 1.1;
-  letter-spacing: 0.5px;
+  line-height: 1.2;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
 }
 
 .hero__title {
   font-family: var(--font-heading);
-  font-size: var(--text-9xl);
+  font-size: 48px;
   font-weight: 400;
-  color: var(--color-hero-text);
-  line-height: 1.2;
-  max-width: 735px;
+  color: var(--color-white);
+  line-height: 1.08;
+  max-width: 919px;
+}
+
+/* Hero subtitle blue variant */
+.hero__subtitle--blue {
+  color: #31baf0;
+}
+
+/* Hero description paragraph */
+.hero__desc {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-white);
+  line-height: 1.5;
+  max-width: 919px;
+}
+
+/* Hero bottom navigation (dashes + arrow) */
+.hero__bottom-nav {
+  position: absolute;
+  bottom: 48px;
+  left: 118px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+.hero__dash-indicators {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero__dash {
+  width: 48px;
+  height: 4px;
+  border: none;
+  border-radius: 0;
+  background-color: var(--color-white);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.4s ease;
+}
+
+.hero__dash:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hero__dash.is-active {
+  background: linear-gradient(180deg, #2326b6, #494de4);
+}
+
+/* Hero nav arrow (next button beside dashes) */
+.hero__nav-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.hero__nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.hero__nav-arrow:active {
+  transform: scale(0.95);
+}
+
+.hero__nav-arrow svg {
+  width: 13px;
+  height: 12px;
+  stroke: var(--color-white);
+  stroke-width: 1.6;
+  fill: none;
 }
 
 /* ==========================================================================
