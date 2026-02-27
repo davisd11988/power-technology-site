@@ -20,6 +20,7 @@ function initActiveNav() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
   // Map page filenames to their nav link hrefs or dropdown keywords
+  const homePages = ['index.html', 'index-v2.html', 'home-v2.html', 'home-3.html', 'home-alt.html'];
   const impactPages = ['our-impact.html', 'our-impact-v2.html', 'our-impact-v3.html'];
   const solutionPages = ['power-one.html', 'portfolio-solutions.html', 'private-equity.html'];
 
@@ -36,7 +37,7 @@ function initActiveNav() {
     const href = link.getAttribute('href');
     if (!href) return;
 
-    if (currentPage === 'index.html' && href === 'index.html') {
+    if (homePages.includes(currentPage) && href === 'index.html') {
       link.classList.add('is-active');
     } else if (impactPages.includes(currentPage) && href.includes('impact')) {
       link.classList.add('is-active');
