@@ -130,7 +130,6 @@ function initTabs() {
   let activeIndex = 0;
 
   function activateTab(index) {
-    if (index === activeIndex && panels[index].classList.contains('is-active')) return;
     activeIndex = index;
 
     // Update tab active states + aria-selected
@@ -143,10 +142,15 @@ function initTabs() {
     if (indicator) {
       const tab = tabs[index];
       const tabList = tab.parentElement;
-      indicator.style.left = `${tab.offsetLeft}px`;
-      indicator.style.width = `${tab.offsetWidth}px`;
+      const listRect = tabList.getBoundingClientRect();
+      const tabRect = tab.getBoundingClientRect();
+      const scrollOffset = tabList.scrollLeft;
+      indicator.style.left = `${tabRect.left - listRect.left + scrollOffset}px`;
+      indicator.style.width = `${tabRect.width}px`;
       // Auto-scroll tab into view on mobile
-      tabList.scrollTo({ left: tab.offsetLeft - 16, behavior: 'smooth' });
+      if (tabList.scrollWidth > tabList.clientWidth) {
+        tabList.scrollTo({ left: tab.offsetLeft - 16, behavior: 'smooth' });
+      }
     }
 
     // Switch panels
