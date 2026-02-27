@@ -3,12 +3,59 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initActiveNav();
   initNavbar();
   initDropdowns();
   initMobileMenu();
   initScrollAnimations();
   initContactPanel();
 });
+
+/* ==========================================================================
+   ACTIVE NAV - Highlight current page link automatically
+   ========================================================================== */
+
+function initActiveNav() {
+  const links = document.querySelectorAll('.navbar__nav > .navbar__link, .navbar__nav > .navbar__item');
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+  // Map page filenames to their nav link hrefs or dropdown keywords
+  const impactPages = ['our-impact.html', 'our-impact-v2.html', 'our-impact-v3.html'];
+  const solutionPages = ['power-one.html', 'portfolio-solutions.html', 'private-equity.html'];
+
+  // Remove all existing is-active
+  links.forEach(el => {
+    el.classList.remove('is-active');
+    const link = el.querySelector('.navbar__link');
+    if (link) link.classList.remove('is-active');
+  });
+  document.querySelectorAll('.navbar__link.is-active').forEach(el => el.classList.remove('is-active'));
+
+  // Set active based on current page
+  document.querySelectorAll('.navbar__nav .navbar__link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    if (currentPage === 'index.html' && href === 'index.html') {
+      link.classList.add('is-active');
+    } else if (impactPages.includes(currentPage) && href.includes('impact')) {
+      link.classList.add('is-active');
+    } else if (currentPage === 'about.html' && href === 'about.html') {
+      link.classList.add('is-active');
+    } else if (currentPage === 'careers.html' && href === 'careers.html') {
+      link.classList.add('is-active');
+    }
+  });
+
+  // Check dropdown triggers for solutions pages
+  if (solutionPages.includes(currentPage)) {
+    document.querySelectorAll('.navbar__dropdown-trigger').forEach(trigger => {
+      if (trigger.textContent.trim().toLowerCase().includes('solution')) {
+        trigger.classList.add('is-active');
+      }
+    });
+  }
+}
 
 /* ==========================================================================
    NAVBAR - Deloitte-style hide on scroll down / reveal on scroll up
