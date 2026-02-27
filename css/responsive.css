@@ -284,6 +284,16 @@
     padding: 60px 40px;
   }
 
+  .impact__carousel-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .impact__carousel-arrow svg {
+    width: 12px;
+    height: 12px;
+  }
+
   /* --- Services (What We Do) --- */
   .services__header {
     left: 40px;
@@ -715,12 +725,17 @@
   }
 
   .impact__carousel-nav {
-    gap: 14px;
+    gap: 16px;
   }
 
   .impact__carousel-arrow {
     width: 44px;
     height: 44px;
+  }
+
+  .impact__carousel-arrow svg {
+    width: 11px;
+    height: 11px;
   }
 
   /* --- Services (What We Do) --- */
@@ -1091,6 +1106,20 @@
 
   .creates__description {
     font-size: 18px;
+  }
+
+  .impact__carousel-nav {
+    gap: 12px;
+  }
+
+  .impact__carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .impact__carousel-arrow svg {
+    width: 10px;
+    height: 10px;
   }
 
   .section-heading--lg {
