@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initHeroSlider() {
   const slides = document.querySelectorAll('.hero__slide');
-  const dashes = document.querySelectorAll('.hero__dash');
+  const prevBtn = document.getElementById('heroPrev');
   const nextBtn = document.getElementById('heroNext');
+  const progressBar = document.getElementById('heroProgress');
+  const track = document.querySelector('.scroll-indicator__track');
 
   if (!slides.length) return;
 
@@ -42,8 +44,8 @@ function initHeroSlider() {
     currentIndex = index;
     slides[currentIndex].classList.add('is-active');
 
-    // Update dash indicators
-    updateDashes();
+    // Update progress indicator
+    updateProgress();
   }
 
   function nextSlide() {
@@ -56,10 +58,12 @@ function initHeroSlider() {
     goToSlide(prev);
   }
 
-  function updateDashes() {
-    dashes.forEach((dash, i) => {
-      dash.classList.toggle('is-active', i === currentIndex);
-    });
+  function updateProgress() {
+    if (progressBar && track) {
+      const trackHeight = track.offsetHeight;
+      const progressHeight = (currentIndex / (totalSlides - 1)) * trackHeight;
+      progressBar.style.height = `${Math.max(progressHeight, 20)}px`;
+    }
   }
 
   function startAutoplay() {
@@ -74,22 +78,18 @@ function initHeroSlider() {
     }
   }
 
-  // Dash click handlers
-  dashes.forEach((dash) => {
-    dash.addEventListener('click', () => {
-      const slideIndex = parseInt(dash.getAttribute('data-slide'), 10);
-      if (slideIndex !== currentIndex) {
-        goToSlide(slideIndex);
-        startAutoplay();
-      }
-    });
-  });
-
-  // Next arrow click handler
+  // Navigation click handlers
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       nextSlide();
-      startAutoplay();
+      startAutoplay(); // Reset timer on manual nav
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startAutoplay(); // Reset timer on manual nav
     });
   }
 
@@ -111,29 +111,8 @@ function initHeroSlider() {
     }
   });
 
-  // Touch/swipe on hero
-  let touchStartX = 0;
-  const heroEl = document.getElementById('hero');
-  if (heroEl) {
-    heroEl.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    heroEl.addEventListener('touchend', (e) => {
-      const diff = touchStartX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 50) {
-        if (diff > 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
-        startAutoplay();
-      }
-    }, { passive: true });
-  }
-
   // Initialize
-  updateDashes();
+  updateProgress();
   startAutoplay();
 }
 

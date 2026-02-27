@@ -159,10 +159,6 @@
     display: none;
   }
 
-  .navbar__right {
-    display: none;
-  }
-
   /* Mobile contact trigger inside nav */
   .navbar__contact-mobile {
     display: block !important;
@@ -185,31 +181,13 @@
     right: 40px;
   }
 
-  .hero__content {
-    gap: 40px;
-  }
-
   .hero__title {
-    font-size: 38px;
+    font-size: 48px;
     max-width: 600px;
   }
 
   .hero__subtitle {
-    font-size: 24px;
-  }
-
-  .hero__desc {
-    font-size: 17px;
-    max-width: 500px;
-  }
-
-  .hero__bottom-nav {
-    left: 40px;
-    bottom: 40px;
-  }
-
-  .hero__dash {
-    width: 36px;
+    font-size: 20px;
   }
 
   .impact-hero__title {
@@ -529,35 +507,16 @@
     left: 20px;
     right: 20px;
     padding-top: 30px;
-    gap: 32px;
+    gap: 24px;
   }
 
   .hero__title {
-    font-size: 30px;
+    font-size: 34px;
     max-width: 100%;
   }
 
   .hero__subtitle {
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
-
-  .hero__desc {
-    font-size: 16px;
-    max-width: 100%;
-  }
-
-  .hero__text {
-    gap: 18px;
-  }
-
-  .hero__bottom-nav {
-    left: 20px;
-    bottom: 28px;
-  }
-
-  .hero__dash {
-    width: 28px;
+    font-size: 18px;
   }
 
   /* --- Impact Hero --- */
@@ -1069,30 +1028,16 @@
    ========================================================================== */
 @media (max-width: 480px) {
   .hero__title {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   .hero__subtitle {
-    font-size: 18px;
-    letter-spacing: 1.5px;
+    font-size: 16px;
   }
 
   .hero__content {
-    gap: 24px;
+    gap: 20px;
     padding-top: 20px;
-  }
-
-  .hero__text {
-    gap: 14px;
-  }
-
-  .hero__desc {
-    font-size: 14px;
-  }
-
-  .hero__bottom-nav {
-    bottom: 24px;
-    gap: 14px;
   }
 
   .impact-hero__title {
