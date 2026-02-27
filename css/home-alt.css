@@ -1,0 +1,344 @@
+/* ==========================================================================
+   Power Technology - Home Alt Page Styles
+   Only styles for sections that DIFFER from V1 (index.html / home.css)
+   ========================================================================== */
+
+/* ==========================================================================
+   WHAT WE DO — ALT (White background with image cards)
+   ========================================================================== */
+
+.wwd-alt {
+  background-color: var(--color-white);
+  border-top: 8px solid var(--color-white);
+  padding: 80px;
+}
+
+.wwd-alt__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.wwd-alt__label {
+  font-family: var(--font-heading);
+  font-size: 35px;
+  font-weight: 800;
+  color: #171a1f;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  line-height: 1.1;
+}
+
+.wwd-alt__desc {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--color-black);
+  line-height: 56px;
+  letter-spacing: 0.9px;
+}
+
+/* --- Card Grid --- */
+.wwd-alt__cards {
+  display: flex;
+  gap: 30px;
+}
+
+/* --- Individual Card --- */
+.wwd-alt__card {
+  flex: 1;
+  background-color: #fefeff;
+  border: 1px solid #eaebeb;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-slow) var(--ease-spotlight),
+              box-shadow var(--duration-slow) var(--ease-spotlight);
+  will-change: transform, box-shadow;
+}
+
+.wwd-alt__card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* --- Card Image --- */
+.wwd-alt__card-image-wrap {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.wwd-alt__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0, 0, 0.046, 0.99);
+}
+
+.wwd-alt__card:hover .wwd-alt__card-image {
+  transform: scale(1.04);
+}
+
+/* --- Card Body --- */
+.wwd-alt__card-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.wwd-alt__card-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 400;
+  color: #323743;
+  text-transform: uppercase;
+  line-height: 1.26;
+}
+
+.wwd-alt__card-link {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 400;
+  color: #2326b6;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  width: fit-content;
+}
+
+.wwd-alt__card-link:hover {
+  color: #1a1c8a;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* ==========================================================================
+   WE ARE — White CTA Section (replaces Dark CTA from V1)
+   ========================================================================== */
+
+.weare {
+  background-color: var(--color-white);
+  padding: 80px 115px;
+}
+
+.weare__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.weare__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.weare__label {
+  font-family: var(--font-heading);
+  font-size: 35px;
+  font-weight: 800;
+  color: #171a1f;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  line-height: 1.1;
+}
+
+.weare__heading {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 300;
+  color: #323743;
+  line-height: 56px;
+}
+
+.weare__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 355px;
+  height: 64px;
+  border: 2px solid var(--color-black);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weare__cta:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.weare__cta:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE — Home Alt specific overrides
+   ========================================================================== */
+
+/* --- Tablet (max 1200px) --- */
+@media (max-width: 1200px) {
+  .wwd-alt {
+    padding: 60px 40px;
+  }
+
+  .wwd-alt__label {
+    font-size: 28px;
+  }
+
+  .wwd-alt__desc {
+    font-size: 30px;
+    line-height: 44px;
+  }
+
+  .wwd-alt__cards {
+    gap: 20px;
+  }
+
+  .wwd-alt__card-image-wrap {
+    height: 240px;
+  }
+
+  .wwd-alt__card-title {
+    font-size: 22px;
+  }
+
+  .wwd-alt__card-link {
+    font-size: 16px;
+  }
+
+  .weare {
+    padding: 60px 40px;
+  }
+
+  .weare__label {
+    font-size: 28px;
+  }
+
+  .weare__heading {
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .weare__cta {
+    width: 300px;
+    height: 56px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+}
+
+/* --- Mobile (max 768px) --- */
+@media (max-width: 768px) {
+  .wwd-alt {
+    padding: 48px 20px;
+  }
+
+  .wwd-alt__header {
+    margin-bottom: 36px;
+  }
+
+  .wwd-alt__label {
+    font-size: 22px;
+  }
+
+  .wwd-alt__desc {
+    font-size: 22px;
+    line-height: 34px;
+    letter-spacing: 0.5px;
+  }
+
+  .wwd-alt__cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .wwd-alt__card-image-wrap {
+    height: 220px;
+  }
+
+  .wwd-alt__card-title {
+    font-size: 20px;
+  }
+
+  .wwd-alt__card-body {
+    padding: 20px 20px;
+  }
+
+  .weare {
+    padding: 48px 20px;
+  }
+
+  .weare__label {
+    font-size: 22px;
+  }
+
+  .weare__heading {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .weare__cta {
+    width: 100%;
+    max-width: 355px;
+    height: 56px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+}
+
+/* --- Small Mobile (max 480px) --- */
+@media (max-width: 480px) {
+  .wwd-alt__label {
+    font-size: 18px;
+  }
+
+  .wwd-alt__desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .wwd-alt__card-image-wrap {
+    height: 180px;
+  }
+
+  .wwd-alt__card-title {
+    font-size: 18px;
+  }
+
+  .wwd-alt__card-link {
+    font-size: 14px;
+  }
+
+  .weare__label {
+    font-size: 18px;
+  }
+
+  .weare__heading {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .weare__cta {
+    height: 52px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+}

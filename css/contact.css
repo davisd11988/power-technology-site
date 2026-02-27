@@ -1,0 +1,534 @@
+/* ==========================================================================
+   Power Technology - Contact Page (Split Layout)
+   ========================================================================== */
+
+/* --- Page Reset: no navbar/footer, full viewport --- */
+.page-contact {
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+
+/* ==========================================================================
+   SPLIT LAYOUT — 50/50 Desktop
+   ========================================================================== */
+
+.contact-split {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ==========================================================================
+   LEFT PANEL — Dark Hero with Video
+   ========================================================================== */
+
+.contact-split__left {
+  position: relative;
+  width: 50%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* --- Video / Image Background --- */
+.contact-split__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contact-split__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-split__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: 1;
+}
+
+/* --- Mini Navbar (top of left panel) --- */
+.contact-split__nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  gap: 24px;
+}
+
+.contact-split__logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.contact-split__logo {
+  height: 48px;
+  width: auto;
+}
+
+.contact-split__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.contact-split__nav-link {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: opacity 0.25s ease;
+  white-space: nowrap;
+}
+
+.contact-split__nav-link:hover {
+  opacity: 0.75;
+}
+
+/* --- Bottom Content --- */
+.contact-split__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-split__subtitle {
+  font-family: var(--font-label);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.contact-split__title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 400;
+  color: var(--color-hero-text);
+  line-height: 1.2;
+  max-width: 520px;
+}
+
+/* ==========================================================================
+   RIGHT PANEL — Form
+   ========================================================================== */
+
+.contact-split__right {
+  width: 50%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--color-white);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.contact-split__right::-webkit-scrollbar {
+  width: 4px;
+}
+
+.contact-split__right::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contact-split__right::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 4px;
+}
+
+.contact-split__form-wrapper {
+  padding: 60px 64px 80px;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- Header --- */
+.contact-split__form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-split__form-title {
+  font-family: var(--font-label);
+  font-size: var(--text-4xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* --- Close Button (X) --- */
+.contact-split__close {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text-primary);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.contact-split__close:hover {
+  background-color: var(--color-card-bg);
+  transform: scale(1.06);
+}
+
+.contact-split__close svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--color-text-primary);
+  stroke-width: 2;
+}
+
+/* --- Subtitle --- */
+.contact-split__form-subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  max-width: 480px;
+}
+
+/* ==========================================================================
+   FORM STYLES — Matching the design system
+   ========================================================================== */
+
+.contact-split__form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+/* --- Two-column row --- */
+.contact-split__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* --- Field --- */
+.contact-split__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* --- Label --- */
+.contact-split__label {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.contact-split__label .required {
+  color: var(--color-text-primary);
+}
+
+/* --- Input, Select, Textarea --- */
+.contact-split__input,
+.contact-split__select,
+.contact-split__textarea {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.25s ease;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.contact-split__input::placeholder,
+.contact-split__textarea::placeholder {
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+.contact-split__input:focus,
+.contact-split__select:focus,
+.contact-split__textarea:focus {
+  border-bottom-color: var(--color-text-primary);
+}
+
+/* --- Select custom arrow --- */
+.contact-split__select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23666' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: 20px;
+}
+
+/* --- Textarea --- */
+.contact-split__textarea {
+  resize: vertical;
+  min-height: 60px;
+  font-family: var(--font-heading);
+}
+
+/* --- Checkbox --- */
+.contact-split__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.contact-split__checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.contact-split__checkbox-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.contact-split__checkbox-text a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contact-split__checkbox-text a:hover {
+  color: var(--color-dark);
+}
+
+/* --- Submit Button --- */
+.contact-split__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 36px;
+  background: var(--color-text-primary);
+  color: var(--color-white);
+  border: none;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-split__submit:hover {
+  background: var(--color-dark);
+  transform: translateY(-1px);
+}
+
+.contact-split__submit:active {
+  transform: translateY(0);
+}
+
+.contact-split__submit svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--color-white);
+  stroke-width: 1.8;
+  fill: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE — Contact Page
+   ========================================================================== */
+
+/* --- 1200px: Adjust proportions --- */
+@media (max-width: 1200px) {
+  .contact-split__left {
+    width: 45%;
+  }
+
+  .contact-split__right {
+    width: 55%;
+  }
+
+  .contact-split__form-wrapper {
+    padding: 48px 40px 60px;
+  }
+
+  .contact-split__nav {
+    padding: 20px 28px;
+  }
+
+  .contact-split__content {
+    padding: 0 28px 48px;
+  }
+
+  .contact-split__nav-links {
+    display: none;
+  }
+
+  .contact-split__logo {
+    height: 42px;
+  }
+}
+
+/* --- 768px: Stack vertically --- */
+@media (max-width: 768px) {
+  .contact-split {
+    flex-direction: column;
+  }
+
+  .contact-split__left {
+    width: 100%;
+    min-height: 360px;
+    height: 360px;
+    flex-shrink: 0;
+  }
+
+  .contact-split__right {
+    width: 100%;
+    min-height: auto;
+    overflow-y: visible;
+  }
+
+  .contact-split__nav {
+    padding: 20px 24px;
+  }
+
+  .contact-split__nav-links {
+    display: none;
+  }
+
+  .contact-split__logo {
+    height: 40px;
+  }
+
+  .contact-split__content {
+    padding: 0 24px 36px;
+    gap: 14px;
+  }
+
+  .contact-split__subtitle {
+    font-size: var(--text-sm);
+  }
+
+  .contact-split__title {
+    font-size: 28px;
+  }
+
+  .contact-split__form-wrapper {
+    padding: 36px 24px 60px;
+  }
+
+  .contact-split__form-title {
+    font-size: var(--text-2xl);
+  }
+
+  .contact-split__form-subtitle {
+    font-size: var(--text-sm);
+  }
+
+  .contact-split__close {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .contact-split__close svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* --- 480px: Tighter spacing, single column fields --- */
+@media (max-width: 480px) {
+  .contact-split__left {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .contact-split__nav {
+    padding: 16px 20px;
+  }
+
+  .contact-split__content {
+    padding: 0 20px 28px;
+    gap: 12px;
+  }
+
+  .contact-split__subtitle {
+    font-size: var(--text-xs);
+  }
+
+  .contact-split__title {
+    font-size: 24px;
+  }
+
+  .contact-split__form-wrapper {
+    padding: 28px 20px 48px;
+    gap: 18px;
+  }
+
+  .contact-split__form-title {
+    font-size: var(--text-xl);
+  }
+
+  .contact-split__form {
+    gap: 22px;
+  }
+
+  .contact-split__row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .contact-split__submit {
+    padding: 16px 24px;
+  }
+}

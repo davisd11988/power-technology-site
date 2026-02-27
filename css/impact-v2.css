@@ -1,0 +1,549 @@
+/* ==========================================================================
+   Power Technology - Impact Page v2 Styles
+   Full-width case study slider with detailed company views
+   ========================================================================== */
+
+/* ==========================================================================
+   CASE STUDY SECTION
+   ========================================================================== */
+
+.case-study {
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.case-study__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 80px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ==========================================================================
+   SLIDES WRAPPER
+   ========================================================================== */
+
+.case-study__slides {
+  position: relative;
+  min-height: 700px;
+}
+
+.case-study__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(40px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.6s;
+  pointer-events: none;
+}
+
+.case-study__slide.is-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.case-study__slide.is-exiting {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+/* ==========================================================================
+   LEFT COLUMN — Content
+   ========================================================================== */
+
+.case-study__left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.case-study__name {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
+
+.case-study__subtitle {
+  font-family: var(--font-label);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 48px;
+}
+
+/* --- Tags / Pills --- */
+.case-study__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.case-study__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background-color: #fafafa;
+  border-radius: 100px;
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.case-study__tag svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #31BAF0;
+}
+
+/* --- Description --- */
+.case-study__description {
+  font-family: var(--font-label);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+/* --- Divider --- */
+.case-study__divider {
+  width: 100%;
+  height: 1.5px;
+  background-color: #31BAF0;
+}
+
+/* --- What We Did / Outcome Boxes --- */
+.case-study__boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.case-study__box {
+  background-color: #fafafa;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.case-study__box-heading {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+}
+
+.case-study__box-text {
+  font-family: var(--font-label);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN — Image + Stats
+   ========================================================================== */
+
+.case-study__right {
+  width: 392px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 580px;
+}
+
+.case-study__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-study__image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  z-index: 1;
+}
+
+.case-study__stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 28px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case-study__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.case-study__stat + .case-study__stat {
+  padding-top: 18px;
+  border-top: 1.5px solid #31BAF0;
+}
+
+.case-study__stat-value {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: #31BAF0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+}
+
+.case-study__stat-label {
+  font-family: var(--font-label);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   NAVIGATION — Arrows at edges + Thick Progress Bar (home page style)
+   ========================================================================== */
+
+.case-study__nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.case-study__arrow {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8f0fe;
+  border: 1.5px solid #b8d4f0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  color: #337cf7;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.case-study__arrow:hover {
+  transform: scale(1.06);
+  background-color: #dbe7fc;
+  box-shadow: 0 4px 12px rgba(51, 124, 247, 0.2);
+}
+
+.case-study__arrow.is-disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.case-study__arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* Thick Proportional Progress Bar — matches home page style */
+.case-study__progress {
+  flex: 1;
+  height: 8px;
+  background-color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.case-study__progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px;
+  background-color: #1a1a1a;
+  transition: width 0.8s cubic-bezier(0, 0, 0.01, 0.982);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE — TABLET (max 1200px)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .case-study__container {
+    padding: 60px 40px 48px;
+    gap: 40px;
+  }
+
+  .case-study__slides {
+    min-height: auto;
+  }
+
+  .case-study__slide {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .case-study__right {
+    width: 100%;
+    min-height: 360px;
+    max-height: 420px;
+    order: -1;
+  }
+
+  .case-study__name {
+    font-size: 34px;
+  }
+
+  .case-study__subtitle {
+    font-size: 26px;
+    line-height: 38px;
+  }
+
+  .case-study__boxes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .case-study__box-heading {
+    font-size: 20px;
+  }
+
+  .case-study__arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .case-study__arrow svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .case-study__stat-value {
+    font-size: 22px;
+  }
+
+  .case-study__stat-label {
+    font-size: 15px;
+  }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .case-study__container {
+    padding: 48px 20px 36px;
+    gap: 32px;
+  }
+
+  .case-study__slide {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .case-study__right {
+    width: 100%;
+    min-height: 280px;
+    max-height: 340px;
+    order: -1;
+    border-radius: var(--radius-sm);
+  }
+
+  .case-study__left {
+    gap: 20px;
+  }
+
+  .case-study__name {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .case-study__subtitle {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .case-study__tags {
+    gap: 8px;
+  }
+
+  .case-study__tag {
+    padding: 8px 14px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .case-study__tag svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .case-study__description {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .case-study__boxes {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .case-study__box {
+    padding: 22px 20px;
+    gap: 10px;
+  }
+
+  .case-study__box-heading {
+    font-size: 18px;
+  }
+
+  .case-study__box-text {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .case-study__stats {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .case-study__stat-value {
+    font-size: 20px;
+  }
+
+  .case-study__stat-label {
+    font-size: 14px;
+  }
+
+  .case-study__nav {
+    gap: 16px;
+  }
+
+  .case-study__arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .case-study__arrow svg {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE — SMALL MOBILE (max 480px)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .case-study__container {
+    padding: 36px 16px 28px;
+    gap: 24px;
+  }
+
+  .case-study__right {
+    min-height: 220px;
+    max-height: 280px;
+  }
+
+  .case-study__name {
+    font-size: 22px;
+    letter-spacing: 0.8px;
+  }
+
+  .case-study__subtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .case-study__tag {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .case-study__tag svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .case-study__description {
+    font-size: 15px;
+  }
+
+  .case-study__box {
+    padding: 18px 16px;
+  }
+
+  .case-study__box-heading {
+    font-size: 16px;
+  }
+
+  .case-study__box-text {
+    font-size: 13px;
+  }
+
+  .case-study__stat-value {
+    font-size: 18px;
+  }
+
+  .case-study__stat-label {
+    font-size: 13px;
+  }
+
+  .case-study__nav {
+    gap: 12px;
+  }
+
+  .case-study__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .case-study__arrow svg {
+    width: 10px;
+    height: 10px;
+  }
+}

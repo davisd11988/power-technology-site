@@ -1,0 +1,925 @@
+/* ==========================================================================
+   Power Technology - Production Animation System
+   Generated from Figma Prototype Interaction Data
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ========================================================================== */
+
+:root {
+  /* --- Timing Durations --- */
+  --duration-instant:    0.15s;
+  --duration-fast:       0.3s;
+  --duration-medium:     0.6s;
+  --duration-slow:       0.8s;
+  --duration-hero:       1.4s;
+  --duration-tabs:       1.12s;
+  --duration-marquee:    10s;
+  --duration-spotlight:  1.4s;
+
+  /* --- Delays --- */
+  --delay-hero:          0.1s;
+  --delay-marquee:       0.8s;
+  --delay-stagger-1:     0s;
+  --delay-stagger-2:     0.1s;
+  --delay-stagger-3:     0.15s;
+  --delay-stagger-4:     0.2s;
+  --delay-stagger-5:     0.25s;
+
+  /* --- Easing Curves --- */
+  /* Standard easings */
+  --ease-out:            cubic-bezier(0, 0, 0.2, 1);
+  --ease-in:             cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out:         cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-linear:         linear;
+
+  /* Figma custom cubic-bezier curves (exact values from prototype data) */
+  --ease-card-snappy:    cubic-bezier(0, 0, 0.046, 0.99);     /* "What Sets Us Apart" + "What We Do" cards */
+  --ease-spotlight:      cubic-bezier(0, 0, 0.048, 0.986);     /* Spotlight section + What We Do cards */
+  --ease-impact:         cubic-bezier(0, 0, 0.58, 1.0);        /* Our Impact card hover */
+  --ease-carousel:       cubic-bezier(0, 0, 0.01, 0.982);      /* Carousel arrow navigation */
+  --ease-spring:         cubic-bezier(0.175, 0.885, 0.32, 1.1);/* Spring approximation for tabs */
+
+  /* --- Transform Values --- */
+  --hero-slide-distance:  40px;
+  --card-lift-y:         -8px;
+  --card-hover-scale:     1.025;
+  --carousel-slide:       100%;
+  --marquee-distance:    -50%;
+
+  /* --- Shadow Values --- */
+  --shadow-rest:         0 1px 3px rgba(0, 0, 0, 0.08),
+                         0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-hover:        0 20px 40px rgba(0, 0, 0, 0.12),
+                         0 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-active:       0 10px 20px rgba(0, 0, 0, 0.1),
+                         0 4px 8px rgba(0, 0, 0, 0.06);
+
+  /* --- Color Tokens (for animated properties) --- */
+  --color-primary:       #0052CC;
+  --color-primary-hover: #003D99;
+  --color-surface:       #FFFFFF;
+  --color-surface-hover: #F7F8FA;
+  --color-text:          #1A1A2E;
+  --color-text-muted:    #6B7280;
+  --color-border:        rgba(0, 0, 0, 0.08);
+  --color-border-hover:  rgba(0, 0, 0, 0.16);
+  --color-cta-bg:        transparent;
+  --color-cta-bg-hover:  var(--color-primary);
+  --color-cta-text:      var(--color-primary);
+  --color-cta-text-hover:#FFFFFF;
+  --color-icon-circle:   rgba(255, 255, 255, 0.1);
+  --color-icon-circle-hover: rgba(255, 255, 255, 0.25);
+
+  /* --- Navbar (uses values from global.css, not overridden here) --- */
+}
+
+
+/* ==========================================================================
+   2. KEYFRAME DEFINITIONS
+   ========================================================================== */
+
+/* --- 2a. Hero Section Intro (Component 23) --- */
+@keyframes heroFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--hero-slide-distance));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroContentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    filter: blur(4px);
+  }
+  60% {
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* --- 2b. Logo Marquee (Our Alliances) --- */
+@keyframes marqueeScrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--marquee-distance));
+  }
+}
+
+/* --- 2c. Carousel Slide Transitions (Our Impact) --- */
+@keyframes carouselSlideLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(calc(var(--carousel-slide) * -1));
+    opacity: 1;
+  }
+}
+
+@keyframes carouselSlideRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(var(--carousel-slide));
+    opacity: 1;
+  }
+}
+
+@keyframes carouselEnterFromRight {
+  0% {
+    transform: translateX(var(--carousel-slide));
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes carouselEnterFromLeft {
+  0% {
+    transform: translateX(calc(var(--carousel-slide) * -1));
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* --- 2d. Scroll-Triggered Reveal Animations --- */
+@keyframes scrollFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scrollSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- 2e. Tab Content Transitions (Operating System) --- */
+@keyframes tabContentEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-2px) scale(1.005); /* spring overshoot */
+  }
+  70% {
+    transform: translateY(1px) scale(0.999);  /* spring settle */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes tabContentExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+/* --- 2f. Spotlight Section Content Transition --- */
+@keyframes spotlightContentSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- 2g. Button Pulse (subtle attention draw) --- */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 82, 204, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 82, 204, 0);
+  }
+}
+
+/* --- 2h. Link Underline Expand --- */
+@keyframes underlineExpand {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+
+/* ==========================================================================
+   3. HERO SECTION (Component 23)
+   Auto-play intro: Smart Animate, 1.4s, Ease Out, 0.1s delay
+   ========================================================================== */
+
+/* Hero visibility is now controlled by the hero slider JS — no opacity: 0 here */
+
+
+/* ==========================================================================
+   4. NAVBAR (1)
+   Navbar styles are handled in global.css - no overrides here.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   5. "WHAT SETS US APART" CARDS (3 cards)
+   Card hover: Smart Animate, 0.8s, cubic-bezier(0, 0, 0.046, 0.99)
+   "Learn More" link: Smart Animate, 0.3s, Ease Out
+   ========================================================================== */
+
+.hover-card-apart {
+  transition:
+    box-shadow var(--duration-slow) var(--ease-card-snappy);
+  will-change: box-shadow;
+}
+
+.hover-card-apart:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Card inner content transitions */
+.hover-card-apart .card__icon {
+  transition: transform var(--duration-slow) var(--ease-card-snappy);
+}
+
+.hover-card-apart:hover .card__icon {
+  transform: scale(1.08);
+}
+
+/* Learn More link within cards */
+.hover-link-learn-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--duration-fast) var(--ease-out);
+  color: var(--color-primary);
+}
+
+.hover-link-learn-more::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.hover-link-learn-more:hover::after {
+  transform: scaleX(1);
+}
+
+/* Arrow icon slides right on hover */
+.hover-link-learn-more .link__arrow {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.hover-link-learn-more:hover .link__arrow {
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   6. IN THE SPOTLIGHT SECTION
+   Section enter: Smart Animate, 1.4s, cubic-bezier(0, 0, 0.048, 0.986)
+   "Learn More" button: Smart Animate, 0.3s, Ease In/Out
+   ========================================================================== */
+
+/* Spotlight section scroll-triggered entrance */
+.spotlight {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.spotlight.in-view {
+  animation: scrollFadeUp var(--duration-spotlight) var(--ease-spotlight) both;
+}
+
+/* Spotlight content slide transition (carousel-like) */
+.spotlight__content {
+  transition:
+    opacity var(--duration-spotlight) var(--ease-spotlight),
+    transform var(--duration-spotlight) var(--ease-spotlight);
+}
+
+.spotlight__content.is-entering {
+  animation: spotlightContentSlide var(--duration-spotlight) var(--ease-spotlight) both;
+}
+
+.spotlight__content.is-exiting {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+/* Spotlight image transition */
+.spotlight__image {
+  transition:
+    opacity var(--duration-spotlight) var(--ease-spotlight),
+    transform var(--duration-spotlight) var(--ease-spotlight);
+}
+
+.spotlight__image.is-entering {
+  animation: scrollScaleIn var(--duration-spotlight) var(--ease-spotlight) both;
+}
+
+/* Spotlight Learn More button */
+.hover-btn-spotlight {
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    color var(--duration-fast) var(--ease-in-out),
+    border-color var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out);
+  border: 1.5px solid var(--color-primary);
+  background-color: var(--color-cta-bg);
+  color: var(--color-cta-text);
+}
+
+.hover-btn-spotlight:hover {
+  background-color: var(--color-cta-bg-hover);
+  color: var(--color-cta-text-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 82, 204, 0.25);
+}
+
+.hover-btn-spotlight:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 82, 204, 0.2);
+}
+
+
+/* ==========================================================================
+   7. OPERATING SYSTEM TABS (Frame 10580)
+   Tab click: Smart Animate, 1.12s, Custom Spring
+   "Learn More" buttons: Smart Animate, 0.3s, Ease In/Out
+   ========================================================================== */
+
+/* Tab button base */
+.click-tab {
+  position: relative;
+  transition:
+    color var(--duration-fast) var(--ease-in-out),
+    background-color var(--duration-fast) var(--ease-in-out);
+  cursor: pointer;
+}
+
+/* Tab underline is handled by .os-tabs__indicator in home.css — no ::after here */
+
+/* Tab sliding indicator (for JS-positioned active pill) */
+.tab-indicator {
+  transition:
+    left var(--duration-tabs) var(--ease-spring),
+    width var(--duration-tabs) var(--ease-spring);
+  will-change: left, width;
+}
+
+/* Tab content panel transitions — spring approximation */
+.tab-panel {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.tab-panel.is-active {
+  animation: tabContentEnter var(--duration-tabs) var(--ease-spring) both;
+  pointer-events: auto;
+  position: relative;
+}
+
+.tab-panel.is-exiting {
+  animation: tabContentExit 0.4s var(--ease-in) both;
+  pointer-events: none;
+}
+
+/* Spring-like transition utility */
+.transition-spring {
+  transition-timing-function: var(--ease-spring);
+  transition-duration: var(--duration-tabs);
+}
+
+/* Tab "Learn More" buttons */
+.hover-btn-tab {
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    color var(--duration-fast) var(--ease-in-out),
+    border-color var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out);
+  border: 1.5px solid var(--color-primary);
+  background-color: var(--color-cta-bg);
+  color: var(--color-cta-text);
+}
+
+.hover-btn-tab:hover {
+  background-color: var(--color-cta-bg-hover);
+  color: var(--color-cta-text-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 82, 204, 0.25);
+}
+
+.hover-btn-tab:active {
+  transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   8. OUR IMPACT — Company Cards Carousel
+   Card hover: Smart Animate, 0.6s, cubic-bezier(0, 0, 0.58, 1.0)
+   Arrow clicks: Smart Animate, 0.8s, cubic-bezier(0, 0, 0.01, 0.982)
+   ========================================================================== */
+
+/* Impact card hover */
+.hover-card-impact {
+  transition:
+    transform var(--duration-medium) var(--ease-impact),
+    box-shadow var(--duration-medium) var(--ease-impact),
+    border-color var(--duration-medium) var(--ease-impact);
+  box-shadow: var(--shadow-rest);
+  will-change: transform, box-shadow;
+}
+
+.hover-card-impact:hover {
+  transform: translateY(var(--card-lift-y));
+  box-shadow: var(--shadow-hover);
+}
+
+/* Carousel track — slides on arrow click */
+.carousel-track {
+  display: flex;
+  transition:
+    transform var(--duration-slow) var(--ease-carousel);
+  will-change: transform;
+}
+
+/* Carousel sliding states (controlled via JS transform) */
+.carousel-track.is-sliding-left {
+  /* JS sets transform: translateX(-cardWidth) */
+}
+
+.carousel-track.is-sliding-right {
+  /* JS sets transform: translateX(cardWidth) */
+}
+
+/* Carousel arrow buttons */
+.click-carousel-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out),
+    opacity var(--duration-fast) var(--ease-in-out);
+  cursor: pointer;
+}
+
+.click-carousel-arrow:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.click-carousel-arrow:active {
+  transform: scale(0.96);
+  box-shadow: var(--shadow-active);
+}
+
+.click-carousel-arrow.is-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+
+/* ==========================================================================
+   9. OUR ALLIANCES — Logo Marquee
+   Marquee layout/styles are handled in global.css - only timing tokens here.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   10. WHAT WE DO CARDS (3 cards)
+   Card hover: Smart Animate, 0.8s, cubic-bezier(0, 0, 0.048, 0.986)
+   ========================================================================== */
+
+.hover-card-services {
+  transition:
+    transform var(--duration-slow) var(--ease-spotlight),
+    box-shadow var(--duration-slow) var(--ease-spotlight);
+  will-change: transform, box-shadow;
+}
+
+.hover-card-services:hover {
+  transform: translateY(var(--card-lift-y)) scale(var(--card-hover-scale));
+  box-shadow: var(--shadow-hover);
+}
+
+/* Card inner content lift on hover */
+.hover-card-services .card__title {
+  transition: color var(--duration-slow) var(--ease-spotlight);
+}
+
+.hover-card-services:hover .card__title {
+  color: var(--color-primary);
+}
+
+.hover-card-services .card__icon {
+  transition: transform var(--duration-slow) var(--ease-spotlight);
+}
+
+.hover-card-services:hover .card__icon {
+  transform: translateY(-4px);
+}
+
+
+/* ==========================================================================
+   11. DARK CTA SECTION — "MEET THE TEAM" BUTTON
+   Hover: Smart Animate, 0.3s, Ease In/Out
+   Border/fill transition
+   ========================================================================== */
+
+.hover-btn-cta {
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    color var(--duration-fast) var(--ease-in-out),
+    border-color var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out);
+  cursor: pointer;
+}
+
+/* Fill sweep effect via pseudo-element */
+.hover-btn-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #FFFFFF;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-fast) var(--ease-in-out);
+  z-index: 0;
+}
+
+.hover-btn-cta span,
+.hover-btn-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hover-btn-cta:hover::before {
+  transform: scaleX(1);
+}
+
+.hover-btn-cta:hover {
+  color: #222222;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hover-btn-cta:hover svg path {
+  stroke: #222222;
+}
+
+.hover-btn-cta:hover .dot {
+  background-color: #337cf7;
+}
+
+.hover-btn-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==========================================================================
+   12. FOOTER SOCIAL ICONS
+   Hover effects for social media icon circles
+   ========================================================================== */
+
+.hover-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-icon-circle);
+  transition:
+    background-color var(--duration-fast) var(--ease-in-out),
+    transform var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out);
+  cursor: pointer;
+}
+
+.hover-social-icon:hover {
+  background-color: var(--color-icon-circle-hover);
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hover-social-icon:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Icon SVG color transition */
+.hover-social-icon svg,
+.hover-social-icon img {
+  transition: opacity var(--duration-fast) var(--ease-in-out);
+  opacity: 0.85;
+}
+
+.hover-social-icon:hover svg,
+.hover-social-icon:hover img {
+  opacity: 1;
+}
+
+
+/* ==========================================================================
+   13. SCROLL-TRIGGERED ANIMATION UTILITIES (.in-view pattern)
+   Add class `.scroll-animate` to any element; JS adds `.in-view` on scroll
+   ========================================================================== */
+
+/* Base: hidden until in view */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.scroll-animate.in-view {
+  animation: scrollFadeUp var(--duration-hero) var(--ease-out) both;
+}
+
+/* Directional variants */
+.scroll-animate--fade {
+  opacity: 0;
+  transform: none;
+}
+
+.scroll-animate--fade.in-view {
+  animation: scrollFadeIn var(--duration-hero) var(--ease-out) both;
+}
+
+.scroll-animate--scale {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.scroll-animate--scale.in-view {
+  animation: scrollScaleIn var(--duration-hero) var(--ease-out) both;
+}
+
+.scroll-animate--left {
+  opacity: 0;
+  transform: translateX(-48px);
+}
+
+.scroll-animate--left.in-view {
+  animation: scrollSlideInLeft var(--duration-hero) var(--ease-out) both;
+}
+
+.scroll-animate--right {
+  opacity: 0;
+  transform: translateX(48px);
+}
+
+.scroll-animate--right.in-view {
+  animation: scrollSlideInRight var(--duration-hero) var(--ease-out) both;
+}
+
+/* Stagger delays for children */
+.scroll-animate.in-view > :nth-child(1) { animation-delay: var(--delay-stagger-1); }
+.scroll-animate.in-view > :nth-child(2) { animation-delay: var(--delay-stagger-2); }
+.scroll-animate.in-view > :nth-child(3) { animation-delay: var(--delay-stagger-3); }
+.scroll-animate.in-view > :nth-child(4) { animation-delay: var(--delay-stagger-4); }
+.scroll-animate.in-view > :nth-child(5) { animation-delay: var(--delay-stagger-5); }
+
+/* Stagger utility classes (for explicit control) */
+.stagger-1 { animation-delay: var(--delay-stagger-1) !important; }
+.stagger-2 { animation-delay: var(--delay-stagger-2) !important; }
+.stagger-3 { animation-delay: var(--delay-stagger-3) !important; }
+.stagger-4 { animation-delay: var(--delay-stagger-4) !important; }
+.stagger-5 { animation-delay: var(--delay-stagger-5) !important; }
+
+
+/* ==========================================================================
+   14. GENERAL TRANSITION UTILITIES
+   ========================================================================== */
+
+/* Duration utilities */
+.transition-instant  { transition-duration: var(--duration-instant) !important; }
+.transition-fast     { transition-duration: var(--duration-fast) !important; }
+.transition-medium   { transition-duration: var(--duration-medium) !important; }
+.transition-slow     { transition-duration: var(--duration-slow) !important; }
+
+/* Easing utilities */
+.ease-out            { transition-timing-function: var(--ease-out) !important; }
+.ease-in             { transition-timing-function: var(--ease-in) !important; }
+.ease-in-out         { transition-timing-function: var(--ease-in-out) !important; }
+.ease-card-snappy    { transition-timing-function: var(--ease-card-snappy) !important; }
+.ease-spotlight      { transition-timing-function: var(--ease-spotlight) !important; }
+.ease-impact         { transition-timing-function: var(--ease-impact) !important; }
+.ease-carousel       { transition-timing-function: var(--ease-carousel) !important; }
+
+/* Spring easing utility (approximation of Figma Custom Spring) */
+.transition-spring {
+  transition-timing-function: var(--ease-spring) !important;
+  transition-duration: var(--duration-tabs) !important;
+}
+
+/* Generic hover utilities */
+.hover-lift {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-opacity {
+  transition: opacity var(--duration-fast) var(--ease-in-out);
+}
+
+.hover-opacity:hover {
+  opacity: 0.7;
+}
+
+/* Active/click state utilities */
+.active-press {
+  transition: transform var(--duration-instant) var(--ease-out);
+}
+
+.active-press:active {
+  transform: scale(0.97);
+}
+
+/* Focus-visible for accessibility */
+.hover-card-apart:focus-visible,
+.hover-card-impact:focus-visible,
+.hover-card-services:focus-visible,
+.hover-btn-cta:focus-visible,
+.hover-btn-spotlight:focus-visible,
+.hover-btn-tab:focus-visible,
+.click-tab:focus-visible,
+.click-carousel-arrow:focus-visible,
+.hover-social-icon:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   15. PREFERS-REDUCED-MOTION
+   Disables all animations and transitions for users who prefer reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Kill all custom property durations */
+  :root {
+    --duration-instant:    0s;
+    --duration-fast:       0s;
+    --duration-medium:     0s;
+    --duration-slow:       0s;
+    --duration-hero:       0s;
+    --duration-tabs:       0s;
+    --duration-marquee:    0s;
+    --duration-spotlight:  0s;
+    --delay-hero:          0s;
+    --delay-marquee:       0s;
+    --delay-stagger-1:     0s;
+    --delay-stagger-2:     0s;
+    --delay-stagger-3:     0s;
+    --delay-stagger-4:     0s;
+    --delay-stagger-5:     0s;
+  }
+
+  /* Remove all animations globally */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Make sure hidden elements become visible immediately */
+  .hero,
+  .scroll-animate,
+  .scroll-animate--fade,
+  .scroll-animate--scale,
+  .scroll-animate--left,
+  .scroll-animate--right,
+  .spotlight {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Stop the marquee entirely */
+  .marquee__track {
+    animation: none !important;
+  }
+
+  /* Ensure tab panels are positioned correctly */
+  .tab-panel {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .tab-panel:not(.is-active) {
+    display: none;
+  }
+}

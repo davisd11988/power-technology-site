@@ -1,0 +1,343 @@
+/* ==========================================================================
+   Power Technology - Our Impact Page Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   IMPACT HERO
+   ========================================================================== */
+
+.impact-hero {
+  position: relative;
+  width: 100%;
+  height: 597px;
+  background-color: var(--color-dark-bg);
+  overflow: hidden;
+}
+
+.impact-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: #101010;
+  overflow: hidden;
+}
+
+.impact-hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.impact-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.impact-hero__content {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 274px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1260px;
+  z-index: 2;
+}
+
+.impact-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.impact-hero__subtitle {
+  font-family: var(--font-label);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: #d4d4d4;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.impact-hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-9xl);
+  font-weight: 400;
+  color: var(--color-hero-text);
+  line-height: 1.2;
+  max-width: 965px;
+}
+
+/* ==========================================================================
+   WHAT THIS CREATES
+   ========================================================================== */
+
+.creates {
+  padding: 80px 0;
+  background-color: var(--color-light-bg);
+  border-top: 8px solid var(--color-white);
+}
+
+.creates__inner {
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.creates__description {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.24;
+  max-width: 1035px;
+}
+
+/* ==========================================================================
+   IMPACT COMPANIES CAROUSEL
+   ========================================================================== */
+
+.companies {
+  background-color: var(--color-card-bg);
+  overflow: hidden;
+}
+
+.companies__carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 80px 80px 60px;
+}
+
+.companies__carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.companies__carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.8s cubic-bezier(0, 0, 0.01, 0.982);
+}
+
+/* --- Cards --- */
+.companies__card {
+  flex-shrink: 0;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.companies__card-image-wrap {
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.companies__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.companies__card:hover .companies__card-image {
+  transform: scale(1.03);
+}
+
+.companies__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 0 0;
+  background: transparent;
+}
+
+.companies__card-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.companies__card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.26;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.companies__card-desc {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Stats inside cards (RMS Energy) */
+.companies__card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: auto;
+}
+
+.companies__card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.companies__card-stat-value {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.3;
+}
+
+.companies__card-stat-label {
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* Learn More hover inside cards */
+.companies__card .learn-more {
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.companies__card .learn-more:hover {
+  color: var(--color-blue-primary);
+}
+
+.companies__card .learn-more:hover span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  color: var(--color-blue-primary);
+}
+
+.companies__card .learn-more .arrow-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.companies__card .learn-more:hover .arrow-icon {
+  transform: translateX(5px);
+  color: var(--color-blue-primary);
+}
+
+/* --- Carousel Navigation: Deloitte-style thick bar + minimal arrows --- */
+.companies__carousel-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Thick Proportional Progress Bar */
+.companies__carousel-progress {
+  flex: 1;
+  height: 8px;
+  background-color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.companies__carousel-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px;
+  background-color: #1a1a1a;
+  transition: width 0.8s cubic-bezier(0, 0, 0.01, 0.982);
+}
+
+/* Minimal Arrow Buttons — grouped right */
+.companies__carousel-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.companies__carousel-arrow {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+  color: #1a1a1a;
+  padding: 0;
+}
+
+.companies__carousel-arrow:hover {
+  opacity: 0.5;
+}
+
+.companies__carousel-arrow.is-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.companies__carousel-arrow svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+
+/* ==========================================================================
+   IMPACT DARK CTA (positioned lower on impact page)
+   ========================================================================== */
+
+.impact-dark-cta .dark-cta__content {
+  top: 198px;
+}
+
+/* ==========================================================================
+   LOWER SECTION
+   ========================================================================== */
+
+.impact-lower {
+  position: relative;
+  height: 1534px;
+}
+
+.impact-lower__alliances {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.impact-lower__cta-footer {
+  position: absolute;
+  top: 361px;
+  left: 0;
+  right: 0;
+}

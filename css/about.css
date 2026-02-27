@@ -1,0 +1,464 @@
+/* ==========================================================================
+   Power Technology - About Us Page Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   ABOUT HERO
+   ========================================================================== */
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 900px;
+  min-height: 600px;
+  background-color: var(--color-dark-bg);
+  overflow: hidden;
+}
+
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: #101010;
+  overflow: hidden;
+}
+
+.about-hero__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.about-hero__content {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1260px;
+  z-index: 2;
+}
+
+.about-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-hero__subtitle {
+  font-family: var(--font-label);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: #d4d4d4;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.about-hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-9xl);
+  font-weight: 400;
+  color: var(--color-hero-text);
+  line-height: 1.2;
+  max-width: 965px;
+}
+
+/* ==========================================================================
+   OUR STORY SECTION
+   ========================================================================== */
+
+.about-story {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.about-story__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-story__bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-story__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.88) 100%);
+  z-index: 1;
+}
+
+.about-story__content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 80px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about-story__text {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 960px;
+}
+
+.about-story__text p {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  color: var(--color-footer-text);
+  line-height: 1.55;
+}
+
+.about-story__link {
+  color: var(--color-blue-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.about-story__link:hover {
+  color: var(--color-white);
+  text-decoration-color: var(--color-white);
+}
+
+/* ==========================================================================
+   VALUE PILLARS
+   ========================================================================== */
+
+.about-pillars {
+  padding: 80px;
+  background-color: var(--color-off-white);
+}
+
+.about-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-pillars__card {
+  background: linear-gradient(160deg, #c8962a 0%, #a67c1e 50%, #8b6914 100%);
+  border-radius: var(--radius-lg);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 300px;
+  transition: transform 0.5s var(--ease-card-snappy), box-shadow 0.5s var(--ease-card-snappy);
+}
+
+.about-pillars__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(139, 105, 20, 0.25), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about-pillars__card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about-pillars__card-desc {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   EXPERT TEAM
+   ========================================================================== */
+
+.about-team {
+  padding: 80px;
+  background-color: var(--color-light-bg);
+}
+
+.about-team__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.about-team__description {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.24;
+  max-width: 800px;
+}
+
+.about-team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.about-team__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.5s var(--ease-card-snappy);
+}
+
+.about-team__card:hover {
+  transform: translateY(-4px);
+}
+
+.about-team__card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-card-bg);
+}
+
+.about-team__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-card-snappy);
+}
+
+.about-team__card:hover .about-team__card-image {
+  transform: scale(1.04);
+}
+
+.about-team__card-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.about-team__card-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ABOUT PAGE RESPONSIVE STYLES
+   ========================================================================== */
+
+/* --- Tablet (max 1200px) --- */
+@media (max-width: 1200px) {
+  .about-hero__content {
+    left: 40px;
+    right: 40px;
+    bottom: 100px;
+  }
+
+  .about-hero__title {
+    font-size: 48px;
+  }
+
+  .about-hero__subtitle {
+    font-size: 20px;
+  }
+
+  .about-story__content {
+    padding: 70px 40px;
+  }
+
+  .about-story__text p {
+    font-size: var(--text-xl);
+  }
+
+  .about-pillars {
+    padding: 60px 40px;
+  }
+
+  .about-pillars__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .about-pillars__card {
+    padding: 36px 28px;
+    min-height: 260px;
+  }
+
+  .about-pillars__card-title {
+    font-size: var(--text-md);
+  }
+
+  .about-team {
+    padding: 60px 40px;
+  }
+
+  .about-team__description {
+    font-size: 28px;
+  }
+
+  .about-team__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+/* --- Mobile (max 768px) --- */
+@media (max-width: 768px) {
+  .about-hero {
+    max-height: none;
+    min-height: 500px;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .about-hero__content {
+    left: 20px;
+    right: 20px;
+    bottom: 60px;
+  }
+
+  .about-hero__title {
+    font-size: 34px;
+    max-width: 100%;
+  }
+
+  .about-hero__subtitle {
+    font-size: 18px;
+  }
+
+  .about-story {
+    min-height: auto;
+  }
+
+  .about-story__content {
+    padding: 48px 20px;
+  }
+
+  .about-story__text p {
+    font-size: var(--text-base);
+  }
+
+  .about-pillars {
+    padding: 48px 20px;
+  }
+
+  .about-pillars__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-pillars__card {
+    padding: 32px 24px;
+    min-height: auto;
+  }
+
+  .about-pillars__card-title {
+    font-size: var(--text-base);
+  }
+
+  .about-pillars__card-desc {
+    font-size: var(--text-xs);
+  }
+
+  .about-team {
+    padding: 48px 20px;
+  }
+
+  .about-team__header {
+    margin-bottom: 36px;
+  }
+
+  .about-team__description {
+    font-size: 22px;
+  }
+
+  .about-team__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .about-team__card-name {
+    font-size: var(--text-sm);
+  }
+
+  .about-team__card-tag {
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+/* --- Small Mobile (max 480px) --- */
+@media (max-width: 480px) {
+  .about-hero__title {
+    font-size: 28px;
+  }
+
+  .about-hero__subtitle {
+    font-size: 16px;
+  }
+
+  .about-story__text p {
+    font-size: var(--text-sm);
+  }
+
+  .about-pillars__card-title {
+    font-size: var(--text-sm);
+  }
+
+  .about-team__description {
+    font-size: 18px;
+  }
+
+  .about-team__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-team__card-name {
+    font-size: var(--text-xs);
+    letter-spacing: 0.5px;
+  }
+}

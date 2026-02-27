@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Power Technology</title>
+  <meta name="description" content="Get in touch with Power Technology to discover how we can help you unlock new growth opportunities.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="page-contact">
+
+  <!-- ===== SPLIT LAYOUT ===== -->
+  <div class="contact-split">
+
+    <!-- ===== LEFT PANEL (Dark Hero) ===== -->
+    <div class="contact-split__left">
+      <div class="contact-split__bg">
+        <video class="contact-split__video" autoplay muted loop playsinline>
+          <source src="assets/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="contact-split__overlay"></div>
+      </div>
+
+      <!-- Mini Navbar -->
+      <nav class="contact-split__nav">
+        <a href="index.html" class="contact-split__logo-link">
+          <img src="images/image-import-57.png" alt="Power Technology" class="contact-split__logo">
+        </a>
+        <div class="contact-split__nav-links">
+          <a href="index.html" class="contact-split__nav-link">Home</a>
+          <a href="our-impact.html" class="contact-split__nav-link">Our Impact</a>
+          <a href="#" class="contact-split__nav-link">What We Do</a>
+          <a href="#" class="contact-split__nav-link">Who We Are</a>
+        </div>
+      </nav>
+
+      <!-- Bottom Content -->
+      <div class="contact-split__content">
+        <p class="contact-split__subtitle">EXECUTION. ENABLED.</p>
+        <h1 class="contact-split__title">Driving performance under pressure.</h1>
+        <a href="index.html" class="btn-pill btn-pill--outline-white hover-btn-cta">
+          <span>EXPLORE OUR CAPABILITIES</span>
+          <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== RIGHT PANEL (Form) ===== -->
+    <div class="contact-split__right">
+      <div class="contact-split__form-wrapper">
+
+        <!-- Header with close button -->
+        <div class="contact-split__form-header">
+          <h2 class="contact-split__form-title">CONTACT US</h2>
+          <a href="index.html" class="contact-split__close" aria-label="Close and return to home">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+
+        <p class="contact-split__form-subtitle">Get in touch to discover how we can help you unlock new growth opportunities.</p>
+
+        <!-- Contact Form -->
+        <form class="contact-split__form" id="contactPageForm">
+          <!-- First Name / Last Name -->
+          <div class="contact-split__row">
+            <div class="contact-split__field">
+              <label class="contact-split__label" for="firstName">First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" class="contact-split__input" placeholder="Enter first name" required>
+            </div>
+            <div class="contact-split__field">
+              <label class="contact-split__label" for="lastName">Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" class="contact-split__input" placeholder="Enter last name" required>
+            </div>
+          </div>
+
+          <!-- Email / Phone -->
+          <div class="contact-split__row">
+            <div class="contact-split__field">
+              <label class="contact-split__label" for="emailAddress">Email Address <span class="required">*</span></label>
+              <input type="email" id="emailAddress" class="contact-split__input" placeholder="Enter email" required>
+            </div>
+            <div class="contact-split__field">
+              <label class="contact-split__label" for="phone">Phone</label>
+              <input type="tel" id="phone" class="contact-split__input" placeholder="Enter phone number">
+            </div>
+          </div>
+
+          <!-- How Can We Help -->
+          <div class="contact-split__field">
+            <label class="contact-split__label" for="helpTopic">How Can We Help? <span class="required">*</span></label>
+            <select id="helpTopic" class="contact-split__select" required>
+              <option value="" disabled selected>Select Topic</option>
+              <option value="pe-solutions">Private Equity Solutions</option>
+              <option value="portfolio-solutions">Portfolio Company Solutions</option>
+              <option value="ai-automation">AI &amp; Automation</option>
+              <option value="tech-enablement">Technology Enablement</option>
+              <option value="operational-excellence">Operational Excellence</option>
+              <option value="industrial-modernization">Industrial Modernization</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Country -->
+          <div class="contact-split__field">
+            <label class="contact-split__label" for="country">Country <span class="required">*</span></label>
+            <select id="country" class="contact-split__select" required>
+              <option value="" disabled selected>Select Country</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="GB">United Kingdom</option>
+              <option value="DE">Germany</option>
+              <option value="FR">France</option>
+              <option value="AU">Australia</option>
+              <option value="JP">Japan</option>
+              <option value="IN">India</option>
+              <option value="BR">Brazil</option>
+              <option value="MX">Mexico</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Additional Comments -->
+          <div class="contact-split__field">
+            <label class="contact-split__label" for="comments">Additional comments (optional)</label>
+            <textarea id="comments" class="contact-split__textarea" placeholder="How can we help with your technology priorities?" rows="3"></textarea>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <label class="contact-split__checkbox">
+            <input type="checkbox" required>
+            <span class="contact-split__checkbox-text">I have read and accept the <a href="#">terms of use</a>. The submission of personal information through this page is subject to Power Technology's <a href="#">Privacy Policy</a>.</span>
+          </label>
+
+          <!-- Submit -->
+          <button type="submit" class="contact-split__submit">
+            <span>SUBMIT</span>
+            <svg viewBox="0 0 16 12" fill="none"><path d="M1 6h12M9.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

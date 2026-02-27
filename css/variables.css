@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Power Technology - Design Tokens
+   ========================================================================== */
+
+:root {
+  /* --- Colors --- */
+  --color-black: #000000;
+  --color-dark: #222222;
+  --color-dark-alt: #010101;
+  --color-dark-bg: #101010;
+  --color-text-primary: #262626;
+  --color-text-secondary: #555555;
+  --color-text-muted: #666666;
+  --color-text-light: #aeaeae;
+  --color-white: #ffffff;
+  --color-off-white: #fafafa;
+  --color-light-bg: #f2f2f2;
+  --color-card-bg: #f4f4f4;
+  --color-surface: #fdfdfd;
+  --color-border: #d9d9d9;
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-blue-primary: #337cf7;
+  --color-blue-accent: #93d3fd;
+  --color-blue-light: #e8f3fd;
+  --color-blue-dark: #003b9f;
+  --color-hero-text: #f6f6f6;
+  --color-footer-text: #ebebeb;
+  --color-overlay: rgba(0, 0, 0, 0.3);
+  --color-overlay-dark: rgba(0, 0, 0, 0.5);
+  --color-navbar-bg: rgba(0, 0, 0, 0.3);
+
+  /* --- Typography --- */
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Outfit', sans-serif;
+
+  /* --- Font Sizes --- */
+  --text-xs: 14px;
+  --text-sm: 16px;
+  --text-base: 18px;
+  --text-md: 20px;
+  --text-lg: 22px;
+  --text-xl: 24px;
+  --text-2xl: 26px;
+  --text-3xl: 30px;
+  --text-4xl: 32px;
+  --text-5xl: 36px;
+  --text-6xl: 40px;
+  --text-7xl: 56px;
+  --text-8xl: 58px;
+  --text-9xl: 64px;
+
+  /* --- Spacing --- */
+  --space-xs: 8px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 30px;
+  --space-3xl: 36px;
+  --space-4xl: 40px;
+  --space-5xl: 50px;
+  --space-6xl: 60px;
+  --space-7xl: 80px;
+  --space-8xl: 100px;
+
+  /* --- Layout --- */
+  --max-width: 1440px;
+  --content-width: 1280px;
+  --content-padding: 80px;
+  --section-gap: 60px;
+
+  /* --- Border Radius --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --radius-pill: 60px;
+  --radius-round: 100px;
+
+  /* --- Shadows --- */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-pill: 0 2px 3.5px rgba(0,0,0,0.1), 0 7px 6.125px rgba(0,0,0,0.09), 0 16px 8.75px rgba(0,0,0,0.05);
+}
