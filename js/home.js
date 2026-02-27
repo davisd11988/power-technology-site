@@ -182,8 +182,8 @@ function initTabs() {
   // Recalculate indicator on resize / orientation change
   window.addEventListener('resize', () => activateTab(activeIndex));
 
-  // Initialize first tab
-  activateTab(0);
+  // Initialize first tab — defer so layout is computed
+  requestAnimationFrame(() => activateTab(0));
 }
 
 /* ==========================================================================
