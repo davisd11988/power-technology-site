@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/impact.css">
+  <link rel="stylesheet" href="css/impact-v2.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
     </button>
     <div class="navbar__nav" id="navMenu">
       <a href="index.html" class="navbar__link">home</a>
-      <a href="our-impact-v2.html" class="navbar__link is-active">our impact</a>
+      <a href="our-impact.html" class="navbar__link is-active">our impact</a>
       <div class="navbar__item" data-dropdown>
         <button class="navbar__link navbar__dropdown-trigger" aria-expanded="false" aria-haspopup="true">
           <span>what we do</span>
@@ -96,98 +97,236 @@
     </div>
   </section>
 
-  <!-- ===== WHAT THIS CREATES ===== -->
-  <section class="creates scroll-animate" id="creates">
-    <div class="creates__inner">
-      <h2 class="section-label">WHAT THIS CREATES</h2>
-      <p class="creates__description">Bringing together research, insight, and execution to deliver measurable impact that moves ideas forward.</p>
-    </div>
-  </section>
+  <!-- ===== CASE STUDY SECTION ===== -->
+  <section class="case-study scroll-animate" id="case-study">
+    <div class="case-study__container">
+      <div class="case-study__slides" id="caseStudySlides">
 
-  <!-- ===== IMPACT COMPANIES CAROUSEL ===== -->
-  <section class="companies scroll-animate" id="companies">
-    <div class="companies__carousel-wrapper">
-      <div class="companies__carousel-viewport">
-        <div class="companies__carousel-track" id="companiesTrack">
-          <!-- Card 1: RMS Energy -->
-          <div class="companies__card">
-            <div class="companies__card-image-wrap">
-              <img class="companies__card-image" src="images/image-import-39.jpg" alt="RMS Energy">
+        <!-- Slide 1: RMS Energy -->
+        <div class="case-study__slide is-active" data-slide="0">
+          <div class="case-study__left">
+            <h2 class="case-study__name">RMS ENERGY</h2>
+            <p class="case-study__subtitle">Improved field service productivity to support growth at scale</p>
+            <div class="case-study__tags">
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Field Service Operations
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Productivity
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Quote- to- Cash
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Operational Visibility
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Enterprise Scale
+              </span>
             </div>
-            <div class="companies__card-body">
-              <div class="companies__card-title-wrap">
-                <h3 class="companies__card-title">RMS ENERGY</h3>
-                <p class="companies__card-desc">Improved field service productivity to support growth at scale</p>
+            <p class="case-study__description">RMS Energy operates a nationwide field service and engineering business experiencing rapid growth. As the organization scaled, leadership sought more consistent visibility and alignment across field operations to support faster, better decisions.</p>
+            <div class="case-study__divider"></div>
+            <div class="case-study__boxes">
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">WHAT WE DID:</h3>
+                <p class="case-study__box-text">Assessed field service operations and technology, modernized quote- to- cash workflows, and defined a scalable operating and systems model aligned to continued growth.</p>
               </div>
-              <a href="#" class="learn-more">
-                <span>LEARN MORE</span>
-                <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">OUTCOME:</h3>
+                <p class="case-study__box-text">Leadership gained clearer, timelier insight into field performance, enabling more predictable productivity as the business scaled.</p>
+              </div>
             </div>
           </div>
-          <!-- Card 2: Forgent -->
-          <div class="companies__card">
-            <div class="companies__card-image-wrap">
-              <img class="companies__card-image" src="images/image-import-43.png" alt="Forgent">
-            </div>
-            <div class="companies__card-body">
-              <div class="companies__card-title-wrap">
-                <h3 class="companies__card-title">FORGENT</h3>
-                <p class="companies__card-desc">Improved manufacturing productivity through operational simplification</p>
+          <div class="case-study__right">
+            <img src="images/rms-energy-windmills.png" alt="RMS Energy" class="case-study__image">
+            <div class="case-study__image-overlay"></div>
+            <div class="case-study__stats">
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">3-5 DAYS → SAME/NEXT DAY</span>
+                <span class="case-study__stat-label">executive visibility lag</span>
               </div>
-              <a href="#" class="learn-more">
-                <span>LEARN MORE</span>
-                <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-          <!-- Card 3: Panelmatic -->
-          <div class="companies__card">
-            <div class="companies__card-image-wrap">
-              <img class="companies__card-image" src="images/image-import-42.png" alt="Panelmatic">
-            </div>
-            <div class="companies__card-body">
-              <div class="companies__card-title-wrap">
-                <h3 class="companies__card-title">PANELMATIC</h3>
-                <p class="companies__card-desc">Improved operational visibility through a disciplined reporting cadence</p>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">90%+ OF JOBS</span>
+                <span class="case-study__stat-label">with enterprise-wide field utilization visibility</span>
               </div>
-              <a href="#" class="learn-more">
-                <span>LEARN MORE</span>
-                <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-          <!-- Card 4: Allied Power & Control -->
-          <div class="companies__card">
-            <div class="companies__card-image-wrap">
-              <img class="companies__card-image" src="images/image-import-60.png" alt="Allied Power & Control">
-            </div>
-            <div class="companies__card-body">
-              <div class="companies__card-title-wrap">
-                <h3 class="companies__card-title">ALLIED POWER &amp; CONTROL</h3>
-                <p class="companies__card-desc">Enabled secure, reliable operations through modern network and security infrastructure</p>
-              </div>
-              <a href="#" class="learn-more">
-                <span>LEARN MORE</span>
-                <svg class="arrow-icon" viewBox="0 0 13 13" fill="none"><path d="M3.5 9.5L9.5 3.5M9.5 3.5H5M9.5 3.5V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
             </div>
           </div>
         </div>
+
+        <!-- Slide 2: Forgent -->
+        <div class="case-study__slide" data-slide="1">
+          <div class="case-study__left">
+            <h2 class="case-study__name">FORGENT</h2>
+            <p class="case-study__subtitle">Improved manufacturing productivity through operational simplification</p>
+            <div class="case-study__tags">
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Manufacturing
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Process Simplification
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Systems Integration
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Operational Efficiency
+              </span>
+            </div>
+            <p class="case-study__description">Forgent's manufacturing operations were slowed by disconnected systems and manual processes that created bottlenecks across production planning and order fulfillment. We unified their core systems and simplified workflows to eliminate redundant steps, giving operators a single source of truth for production data.</p>
+            <div class="case-study__divider"></div>
+            <div class="case-study__boxes">
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">WHAT WE DID:</h3>
+                <p class="case-study__box-text">Integrated ERP, production scheduling, and quality management systems into a unified platform. Streamlined order-to-ship workflows and eliminated manual data re-entry across departments.</p>
+              </div>
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">OUTCOME:</h3>
+                <p class="case-study__box-text">Production planning cycle time reduced by 40%. Order accuracy improved to 98%+, and shop floor teams now operate from a single integrated dashboard with real-time status visibility.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-study__right">
+            <img src="images/image-import-43.png" alt="Forgent" class="case-study__image">
+            <div class="case-study__image-overlay"></div>
+            <div class="case-study__stats">
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">40% REDUCTION</span>
+                <span class="case-study__stat-label">Production planning cycle time</span>
+              </div>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">98%+ ACCURACY</span>
+                <span class="case-study__stat-label">Order fulfillment rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Panelmatic -->
+        <div class="case-study__slide" data-slide="2">
+          <div class="case-study__left">
+            <h2 class="case-study__name">PANELMATIC</h2>
+            <p class="case-study__subtitle">Improved operational visibility through a disciplined reporting cadence</p>
+            <div class="case-study__tags">
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Reporting Cadence
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Operational Visibility
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Decision Support
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Performance Tracking
+              </span>
+            </div>
+            <p class="case-study__description">Panelmatic lacked consistent visibility into operational performance, making it difficult for leadership to identify issues early or make data-driven decisions. We implemented a structured reporting cadence with automated dashboards that surface the right metrics at the right frequency for each level of the organization.</p>
+            <div class="case-study__divider"></div>
+            <div class="case-study__boxes">
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">WHAT WE DID:</h3>
+                <p class="case-study__box-text">Designed and deployed a tiered reporting framework — daily operational dashboards, weekly management reviews, and monthly executive scorecards — all connected to live data sources.</p>
+              </div>
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">OUTCOME:</h3>
+                <p class="case-study__box-text">Leadership now has consistent, timely visibility into production, quality, and financial performance. Issue identification time dropped from weeks to days, enabling faster corrective action.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-study__right">
+            <img src="images/image-import-42.png" alt="Panelmatic" class="case-study__image">
+            <div class="case-study__image-overlay"></div>
+            <div class="case-study__stats">
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">WEEKS → DAYS</span>
+                <span class="case-study__stat-label">Issue identification time</span>
+              </div>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">3-TIER REPORTING</span>
+                <span class="case-study__stat-label">Daily, weekly & monthly cadence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Allied Power & Control -->
+        <div class="case-study__slide" data-slide="3">
+          <div class="case-study__left">
+            <h2 class="case-study__name">ALLIED POWER &amp; CONTROL</h2>
+            <p class="case-study__subtitle">Enabled secure, reliable operations through modern network and security infrastructure</p>
+            <div class="case-study__tags">
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Network Security
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Infrastructure
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                Reliability
+              </span>
+              <span class="case-study__tag">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                IT Modernization
+              </span>
+            </div>
+            <p class="case-study__description">Allied Power &amp; Control was running critical operations on aging network infrastructure with limited security controls. We modernized their entire IT backbone — from networking and endpoint security to backup and disaster recovery — ensuring operational continuity and protection against evolving threats.</p>
+            <div class="case-study__divider"></div>
+            <div class="case-study__boxes">
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">WHAT WE DID:</h3>
+                <p class="case-study__box-text">Deployed a modern network architecture with enterprise-grade firewalls, endpoint detection and response, segmented VLANs, and a comprehensive backup and disaster recovery solution.</p>
+              </div>
+              <div class="case-study__box">
+                <h3 class="case-study__box-heading">OUTCOME:</h3>
+                <p class="case-study__box-text">Network uptime improved to 99.9%+. Zero security incidents since deployment. Full disaster recovery capability with sub-4-hour RTO, giving leadership confidence in operational resilience.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-study__right">
+            <img src="images/image-import-60.png" alt="Allied Power & Control" class="case-study__image">
+            <div class="case-study__image-overlay"></div>
+            <div class="case-study__stats">
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">99.9%+ UPTIME</span>
+                <span class="case-study__stat-label">Network availability</span>
+              </div>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">SUB-4-HOUR RTO</span>
+                <span class="case-study__stat-label">Disaster recovery capability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <!-- Carousel Navigation — Deloitte style -->
-      <div class="companies__carousel-nav">
-        <div class="companies__carousel-progress">
-          <div class="companies__carousel-progress-bar" id="companiesProgress"></div>
+
+      <!-- Navigation Bar -->
+      <div class="case-study__nav">
+        <button class="case-study__arrow case-study__arrow--prev is-disabled" id="caseStudyPrev" aria-label="Previous case study">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="case-study__progress">
+          <div class="case-study__progress-bar" id="caseStudyProgress"></div>
         </div>
-        <div class="companies__carousel-arrows">
-          <button class="companies__carousel-arrow companies__carousel-arrow--prev is-disabled" id="companiesPrev" aria-label="Previous company">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <button class="companies__carousel-arrow companies__carousel-arrow--next" id="companiesNext" aria-label="Next company">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M4 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
+        <button class="case-study__arrow case-study__arrow--next" id="caseStudyNext" aria-label="Next case study">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M4 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -360,6 +499,7 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
-  <script src="js/impact.js"></script>
+  <script src="js/impact-v2.js"></script>
 </body>
 </html>
+<!-- cache bust -->
