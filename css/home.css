@@ -680,7 +680,7 @@
   height: 1110px;
   border-top: 8px solid var(--color-white);
   overflow: hidden;
-  background-color: var(--color-dark);
+  background-color: #000000;
 }
 
 .services__header {

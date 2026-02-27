@@ -415,7 +415,7 @@ body {
   width: 100%;
   height: 545px;
   overflow: hidden;
-  background-color: var(--color-dark);
+  background-color: #000000;
   background-image: url('../images/image-import-2.jpg');
   background-size: cover;
   background-position: center;
