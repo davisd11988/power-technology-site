@@ -332,6 +332,20 @@ body {
   color: #FFFFFF;
 }
 
+/* Blue fill sweep — ensure ::before is blue (overrides animations.css) */
+.btn-pill.hover-btn-cta::before {
+  background-color: #5B78F5;
+}
+
+.btn-pill.hover-btn-cta:hover {
+  color: #FFFFFF;
+  border-color: #5B78F5;
+}
+
+.btn-pill.hover-btn-cta:hover svg path {
+  stroke: #FFFFFF;
+}
+
 .btn-pill--outline-blue {
   border: 1px solid rgba(51, 124, 247, 0.4);
   background: transparent;
