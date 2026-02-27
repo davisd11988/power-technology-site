@@ -128,6 +128,22 @@ function initTabs() {
   if (!tabs.length || !panels.length) return;
 
   let activeIndex = 0;
+  let initialized = false;
+
+  function positionIndicator(index) {
+    if (!indicator) return;
+    const tab = tabs[index];
+    const tabList = tab.parentElement;
+    const listRect = tabList.getBoundingClientRect();
+    const tabRect = tab.getBoundingClientRect();
+    const scrollOffset = tabList.scrollLeft;
+    indicator.style.left = `${tabRect.left - listRect.left + scrollOffset}px`;
+    indicator.style.width = `${tabRect.width}px`;
+    // Auto-scroll tab into view on mobile
+    if (tabList.scrollWidth > tabList.clientWidth) {
+      tabList.scrollTo({ left: tab.offsetLeft - 16, behavior: 'smooth' });
+    }
+  }
 
   function activateTab(index) {
     activeIndex = index;
@@ -138,20 +154,8 @@ function initTabs() {
       tab.setAttribute('aria-selected', String(i === index));
     });
 
-    // Animate spring indicator using actual tab position
-    if (indicator) {
-      const tab = tabs[index];
-      const tabList = tab.parentElement;
-      const listRect = tabList.getBoundingClientRect();
-      const tabRect = tab.getBoundingClientRect();
-      const scrollOffset = tabList.scrollLeft;
-      indicator.style.left = `${tabRect.left - listRect.left + scrollOffset}px`;
-      indicator.style.width = `${tabRect.width}px`;
-      // Auto-scroll tab into view on mobile
-      if (tabList.scrollWidth > tabList.clientWidth) {
-        tabList.scrollTo({ left: tab.offsetLeft - 16, behavior: 'smooth' });
-      }
-    }
+    // Position indicator
+    positionIndicator(index);
 
     // Switch panels
     panels.forEach((panel, i) => {
@@ -180,10 +184,22 @@ function initTabs() {
   });
 
   // Recalculate indicator on resize / orientation change
-  window.addEventListener('resize', () => activateTab(activeIndex));
+  window.addEventListener('resize', () => positionIndicator(activeIndex));
 
-  // Initialize first tab — defer so layout is computed
-  requestAnimationFrame(() => activateTab(0));
+  // Initialize first tab — disable transition so bar appears instantly
+  requestAnimationFrame(() => {
+    if (indicator) {
+      indicator.style.transition = 'none';
+    }
+    activateTab(0);
+    // Re-enable transition after the bar is positioned
+    requestAnimationFrame(() => {
+      if (indicator) {
+        indicator.style.transition = '';
+      }
+      initialized = true;
+    });
+  });
 }
 
 /* ==========================================================================
